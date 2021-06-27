@@ -13,9 +13,9 @@ public class MAIN {
     	CategoryModel cm = new CategoryModel();
     	CategoryController cc= new CategoryController(cv, cm);
     	//PRODUCT
-//       ProductView theView = new ProductView();
-//      ProductModel theModel = new ProductModel();
-//    ProductController theController = new ProductController(theView, theModel);
+    	//ProductView theView = new ProductView();
+    	//ProductModel theModel = new ProductModel();
+    	//ProductController theController = new ProductController(theView, theModel);
     	
         //TRANSACT
         TransactView tv = new TransactView();
@@ -24,12 +24,15 @@ public class MAIN {
         
         //LOGINPAGE
         //CASHIERLOGIN
+        CashierLoginView clv =  new CashierLoginView();
+        CashierLoginModel clm =  new CashierLoginModel();
+        CashierLoginController clc =  new CashierLoginController(clv, clm);
         //ADMINLOGIN
     	AdminLoginView av =  new AdminLoginView();
     	AdminLoginModel am =  new AdminLoginModel();
     	AdminLoginController ac =  new AdminLoginController(av, am);
         //DASHBOARD
-        tv.setVisible(true);
+    	clv.setVisible(true);
 	}
 
 }
