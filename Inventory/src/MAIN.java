@@ -1,8 +1,10 @@
-
-
 public class MAIN {
 
 	public static void main(String[] args) {
+        
+        //LOGINPAGE
+        LoginPageView lv = new LoginPageView();
+        
 		//USER
     	UserView uv = new UserView();
     	UserModel um = new UserModel();
@@ -13,16 +15,15 @@ public class MAIN {
     	CategoryModel cm = new CategoryModel();
     	CategoryController cc= new CategoryController(cv, cm);
     	//PRODUCT
-    	//ProductView theView = new ProductView();
-    	//ProductModel theModel = new ProductModel();
-    	//ProductController theController = new ProductController(theView, theModel);
+//    	ProductView theView = new ProductView();
+//    	ProductModel theModel = new ProductModel();
+//    	ProductController theController = new ProductController(theView, theModel);
     	
         //TRANSACT
         TransactView tv = new TransactView();
         TransactModel tm = new TransactModel();
         TransactController tc = new TransactController(tv, tm);
-        
-        //LOGINPAGE
+
         //CASHIERLOGIN
         CashierLoginView clv =  new CashierLoginView();
         CashierLoginModel clm =  new CashierLoginModel();
@@ -32,7 +33,7 @@ public class MAIN {
     	AdminLoginModel am =  new AdminLoginModel();
     	AdminLoginController ac =  new AdminLoginController(av, am);
         //DASHBOARD
-    	clv.setVisible(true);
+    	lv.setVisible(true);
 	}
 
 }
