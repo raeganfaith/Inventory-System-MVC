@@ -10,8 +10,8 @@ import javax.swing.JOptionPane;
 		AdminLoginModel am;
 		String Username, Password;
 		public AdminLoginController(AdminLoginView av, AdminLoginModel am) {
-				this.av = av;
-				this.am = am;	
+			this.av = av;
+			this.am = am;	
 			this.av.addLoginListener(new LoginListener());
 			this.av.addCancelListener(new CancelListener());
 			this.av.addCloseListener(new CloseListener());

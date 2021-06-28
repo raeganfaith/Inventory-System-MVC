@@ -75,7 +75,8 @@ public class TransactController extends JFrame {
 	class BackListener implements MouseListener{
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
+			DashboardView dv = new DashboardView();	
+			dv.setVisible(true);
 			
 		}
 		@Override

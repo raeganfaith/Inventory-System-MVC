@@ -82,8 +82,10 @@ import javax.swing.border.EmptyBorder;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to admin?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					AdminLoginView first = new AdminLoginView();
-					first.setVisible(true);
+					AdminLoginView frame = new AdminLoginView();
+					AdminLoginModel model = new AdminLoginModel();
+					AdminLoginController control = new AdminLoginController(frame, model);
+					frame.setVisible(true);
 					CashierLoginView.this.dispose();
 				}
 			}
@@ -101,8 +103,10 @@ import javax.swing.border.EmptyBorder;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to admin?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					AdminLoginView first = new AdminLoginView();
-					first.setVisible(true);
+					AdminLoginView frame = new AdminLoginView();
+					AdminLoginModel model = new AdminLoginModel();
+					AdminLoginController control = new AdminLoginController(frame, model);
+					frame.setVisible(true);
 					CashierLoginView.this.dispose();
 				}
 			}

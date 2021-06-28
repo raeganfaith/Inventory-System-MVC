@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +13,7 @@ import java.io.FileWriter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class CategoryController extends CategoryModel{
+public class CategoryController extends CategoryView{
 		private CategoryView cv;
 		private CategoryModel cm;
 		
@@ -23,14 +22,14 @@ public class CategoryController extends CategoryModel{
 			this.cm = cm;
 			
 			this.cv.addAddListener(new AddListener());;
-			this.cv.addBackListener(new BackListener());
+			this.cv.addMouseListener(new BackListener());
 			this.cv.addEditListener(new EditListener());
 			this.cv.addDelListener(new DelListener());
 			this.cv.addClearListener(new ClearListener());
 			this.cv.addSaveListener(new SaveListener());		
 			this.cv.addCloseListener(new CloseListener());
 			
-			cv.setVisible(true);
+			
 			try {
 				FileReader fr = new FileReader(cm.file);
 				BufferedReader br = new BufferedReader(fr);

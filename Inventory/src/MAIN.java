@@ -34,7 +34,6 @@ public class MAIN {
 		CashierLoginModel clm = new CashierLoginModel();
 		CashierLoginController clc = new CashierLoginController(clv, clm);
        
-    	
     	lv.setVisible(true);
     
     	

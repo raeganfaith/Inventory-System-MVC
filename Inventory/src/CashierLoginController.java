@@ -75,8 +75,8 @@ import javax.swing.JOptionPane;
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to go back?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					DashboardView first = new DashboardView();
-					first.setVisible(true);
+					LoginPageView lv = new LoginPageView(); 
+					lv.setVisible(true);
 					clv.dispose();
 			}
 		}

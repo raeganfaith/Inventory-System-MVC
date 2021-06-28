@@ -1,9 +1,21 @@
-
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +28,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-public class CategoryView{
+public class CategoryView extends JFrame{
 	
 	public JTextField ID = new JTextField(10);
 	public JTextField name = new JTextField(10);
@@ -43,25 +55,25 @@ public class CategoryView{
 	
 	DefaultTableModel model;
 	
-	CategoryView() {
+	CategoryView() {	
 		setUndecorated(true); 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 450); //Frame size
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setBounds(100, 100, 700, 550); //Frame size
 		prodpanel = new JPanel();
 		prodpanel.setBackground(new Color(51, 153, 153));
 		prodpanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setprodpanel(prodpanel);
-		setRelativeLocation(null);
+		setLocationRelativeTo(null);
 		prodpanel.setLayout(null);
 		
-//		prodpanel.add(ID, name);
-//		prodpanel.add(lblUni, lblStore);
-//		prodpanel.add(title, logo);
-//		prodpanel.add(lblTitle, lblCatID);
-//		prodpanel.add(lblname, btnAdd);
-//		prodpanel.add(btnSave, btnClear);
-//		prodpanel.add(CloseButton, btnback);
-//		prodpanel.add(btnDelete, btnEdit);
+		prodpanel.add(ID, name);
+		prodpanel.add(lblUni, lblStore);
+		prodpanel.add(title, logo);
+		prodpanel.add(lblTitle, lblCatID);
+		prodpanel.add(lblname, btnAdd);
+		prodpanel.add(btnSave, btnClear);
+		prodpanel.add(CloseButton, btnback);
+		prodpanel.add(btnDelete, btnEdit);
 		
 		scrollPane.setBounds(295, 186, 377, 347); 
 		prodpanel.add(scrollPane); 
@@ -151,27 +163,7 @@ public class CategoryView{
 		btnAdd.setBounds(30, 289, 231, 41);
 		prodpanel.add(btnAdd);
 		
-		//this.(prodpanel);
-	}
-
-	private void setUndecorated(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void setDefaultCloseOperation(int exitOnClose) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void setBounds(int i, int j, int k, int l) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void setRelativeLocation(Object object) {
-		// TODO Auto-generated method stub
-		
+		this.add(prodpanel);
 	}
 
 	private void setprodpanel(JPanel prodpanel2) {
@@ -221,16 +213,6 @@ public class CategoryView{
 	}
 	void displaysuccesmessage(String succesMessage) {
 		JOptionPane.showMessageDialog(null, succesMessage);
-	}
-
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void dispose() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	}

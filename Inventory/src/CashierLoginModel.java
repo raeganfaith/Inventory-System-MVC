@@ -104,9 +104,13 @@ public class CashierLoginModel extends JFrame {
                 
                 if(user.equals(forUser) & password.equals(forPass)) {
                     JOptionPane.showMessageDialog(null, "Login Successfully!");
-                    UserView dv = new UserView();
+                    DashboardView dv = new DashboardView();	
                     dv.setVisible(true);
-                    //CashierLoginView.setVisible(false);
+                    
+                    CashierLoginView clv = new CashierLoginView();
+            		CashierLoginModel clm = new CashierLoginModel();
+            		CashierLoginController clc = new CashierLoginController(clv, clm);                
+                    clv.setVisible(false);                
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");

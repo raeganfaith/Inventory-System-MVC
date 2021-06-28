@@ -27,8 +27,6 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 	public class AdminLoginView extends JFrame {
-		
-		
 		private Image img_logo = new ImageIcon(AdminLoginView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(140, 170, Image.SCALE_SMOOTH);
 		private Image img_admin = new ImageIcon(AdminLoginView.class.getResource("ress/admin.png")).getImage().getScaledInstance(135, 160, Image.SCALE_SMOOTH);
 		
@@ -98,8 +96,10 @@ import javax.swing.border.EmptyBorder;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					CashierLoginView first = new CashierLoginView();
-					first.setVisible(true);
+					CashierLoginView clv = new CashierLoginView();
+					CashierLoginModel clm = new CashierLoginModel();
+					CashierLoginController clc = new CashierLoginController(clv, clm);
+					clv.setVisible(true);
 					AdminLoginView.this.dispose();
 				}
 			}
@@ -117,8 +117,10 @@ import javax.swing.border.EmptyBorder;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					CashierLoginView first = new CashierLoginView();
-					first.setVisible(true);
+					CashierLoginView clv = new CashierLoginView();
+					CashierLoginModel clm = new CashierLoginModel();
+					CashierLoginController clc = new CashierLoginController(clv, clm);
+					clv.setVisible(true);
 					AdminLoginView.this.dispose();
 				}
 			}
@@ -287,6 +289,7 @@ import javax.swing.border.EmptyBorder;
 		JOptionPane.showMessageDialog(null, Message);
 	}
 }
+	
 
 	
 	

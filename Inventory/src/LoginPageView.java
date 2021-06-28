@@ -154,8 +154,10 @@ public class LoginPageView extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to Login as Cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					CashierLoginView first = new CashierLoginView();
-					first.setVisible(true);
+					CashierLoginView clv = new CashierLoginView();
+					CashierLoginModel clm = new CashierLoginModel();
+					CashierLoginController clc = new CashierLoginController(clv, clm);
+					clv.setVisible(true);
 					LoginPageView.this.dispose();
 				}
 			}
@@ -183,11 +185,12 @@ public class LoginPageView extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to Login as Cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					CashierLoginView first = new CashierLoginView();
-					first.setVisible(true);
+					CashierLoginView clv = new CashierLoginView();
+					CashierLoginModel clm = new CashierLoginModel();
+					CashierLoginController clc = new CashierLoginController(clv, clm);
+					clv.setVisible(true);
 					LoginPageView.this.dispose();
-					AdminLoginView view = new AdminLoginView();
-					//view.Screen();
+					
 				}
 			}
 		});

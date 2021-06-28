@@ -40,9 +40,7 @@ public class DashboardView extends JFrame {
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
-		
-		
-		
+				
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(156, 0, 109, 144);
 		lblNewLabel.setIcon(new ImageIcon(img_logo));
@@ -151,7 +149,7 @@ public class DashboardView extends JFrame {
 		    	CategoryModel cm = new CategoryModel();
 		    	CategoryController cc = new CategoryController(cv, cm);
 		    	cv.setVisible(true);
-					//DashboardView.this.dispose();
+				DashboardView.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -174,7 +172,7 @@ public class DashboardView extends JFrame {
 		    	CategoryModel cm = new CategoryModel();
 		    	CategoryController cc = new CategoryController(cv, cm);
 		    	cv.setVisible(true);
-				//DashboardView.this.setVisible(false);			
+				DashboardView.this.setVisible(false);			
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -198,9 +196,11 @@ public class DashboardView extends JFrame {
 		lbltransacthist.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					TransactView first = new TransactView();
-					first.setVisible(true);
-					DashboardView.this.dispose();
+				TransactView tv = new TransactView();
+		        TransactModel tm = new TransactModel();
+		        TransactController tc = new TransactController(tv, tm);
+		        tv.setVisible(true);
+				DashboardView.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -219,9 +219,11 @@ public class DashboardView extends JFrame {
 		PnlTransactionHistory.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					TransactView first = new TransactView();
-					first.setVisible(true);
-					DashboardView.this.dispose();
+				TransactView tv = new TransactView();
+		        TransactModel tm = new TransactModel();
+		        TransactController tc = new TransactController(tv, tm);
+		        tv.setVisible(true);
+				DashboardView.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
