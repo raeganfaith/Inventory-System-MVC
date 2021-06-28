@@ -15,9 +15,7 @@ public class MAIN {
     	CategoryModel cm = new CategoryModel();
     	CategoryController cc= new CategoryController(cv, cm);
     	//PRODUCT
-//    	ProductView theView = new ProductView();
-//    	ProductModel theModel = new ProductModel();
-//    	ProductController theController = new ProductController(theView, theModel);
+    	ProductView theView = new ProductView();
     	
         //TRANSACT
         TransactView tv = new TransactView();
@@ -33,7 +31,9 @@ public class MAIN {
     	AdminLoginModel am =  new AdminLoginModel();
     	AdminLoginController ac =  new AdminLoginController(av, am);
         //DASHBOARD
-    	lv.setVisible(true);
+    	DashboardView dv = new DashboardView();
+    	
+    	clv.setVisible(true);
 	}
 
 }

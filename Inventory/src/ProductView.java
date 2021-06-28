@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.AbstractButton;
-import javax.swing.Action;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -28,7 +27,6 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -40,45 +38,39 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 
-public class ProductView extends JFrame {
+public class ProductView extends JFrame {	
 	private Image img_logo = new ImageIcon(ProductView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(70, 100, Image.SCALE_SMOOTH);
 	
-	//private Image img_logo = new ImageIcon(ProductView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(70, 100, Image.SCALE_SMOOTH);
-	public JTextField ID = new JTextField(10);
-	public JTextField name = new JTextField(10);
-	public JTextField quantity = new JTextField(10);
-	public JTextField price = new JTextField(10);
-	public JTextField description = new JTextField(10);
-	private JLabel lblUni = new JLabel("UNI");
-	private JLabel lblStore = new JLabel("STORE");
-	private JLabel title = new JLabel("Inventory system");
-	private JLabel logo = new JLabel("");
-	private JLabel lblTitle = new JLabel("PRODUCT INVENTORY");
-	private JLabel lblProdID = new JLabel("Product ID:");
-	private JLabel lblname = new JLabel("Name:");
-	private JLabel lblcat = new JLabel("Category:");
-	private JLabel lblstock = new JLabel("Stock:");
-	private JLabel lblprice = new JLabel("Price:");
-	private JLabel lbldesc = new JLabel("Description:");
-	public JLabel CloseButton = new JLabel("CLOSE");
-	public JLabel btnback = new JLabel("  BACK");
-	public JTable table = new JTable();
-	private JPanel contentPane = new JPanel();
-	private JScrollPane scrollPane = new JScrollPane();
-	private JPanel panel = new JPanel();
-	public static JComboBox<String> comboBox;
-	private JButton btnadd = new JButton("ADD");
-	private JButton btnEdit = new JButton("EDIT");
-	private JButton btnDelete = new JButton("DELETE");
-	private JButton btnClear = new JButton("CLEAR");
-	private JButton btnSave = new JButton("SAVE");
-	private JButton btnSwitch = new JButton("SWITCH");
-	final Object[] row = new Object[5];
+	private static JPanel contentPane;
+	private JTextField ID;
+	private JTextField name;
+	private JTextField quantity;
+	private JTextField price;
+	private JTextField description;
 	
 	DefaultComboBoxModel combo;
 	DefaultTableModel model;
 	
-	ProductView() {
+
+	private JTable table;
+	private static JComboBox<String> comboBox;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ProductView frame = new ProductView();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}	
+	public ProductView() {
+		
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 550); //Frame size
@@ -88,79 +80,92 @@ public class ProductView extends JFrame {
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
-
+		
+		JLabel lblUni = new JLabel("UNI");
 		lblUni.setBounds(257, 32, 124, 69);
 		lblUni.setForeground(new Color(245, 245, 245));
 		lblUni.setFont(new Font("Big John", Font.PLAIN, 50));
 		contentPane.add(lblUni);
 		
+		JLabel lblStore = new JLabel("STORE");
 		lblStore.setBounds(350, 25, 209, 82);
 		lblStore.setForeground(new Color(0, 51, 51));
 		lblStore.setFont(new Font("Big John", Font.PLAIN, 50));
 		contentPane.add(lblStore);
 		
-
-		title.setBounds(258, 74, 242, 48);
-		title.setForeground(new Color(153, 204, 204));
-		title.setFont(new Font("Big John", Font.PLAIN, 17));
-		contentPane.add(title);
+		JLabel lblNewLabel_1 = new JLabel("Inventory system");
+		lblNewLabel_1.setBounds(258, 74, 242, 48);
+		lblNewLabel_1.setForeground(new Color(153, 204, 204));
+		lblNewLabel_1.setFont(new Font("Big John", Font.PLAIN, 17));
+		contentPane.add(lblNewLabel_1);
 		
-
-		logo.setBounds(184, 0, 77, 130);
-		logo.setIcon(new ImageIcon(img_logo));
-		contentPane.add(logo);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(184, 0, 77, 130);
+		lblNewLabel.setIcon(new ImageIcon(img_logo));
+		contentPane.add(lblNewLabel);
 		
+		JPanel panel = new JPanel();
 		panel.setBounds(0, 132, 700, 10);
 		panel.setBackground(new Color(220, 220, 220));
 		contentPane.add(panel);
 		
-		lblTitle.setBounds(242, 152, 251, 24);
-		lblTitle.setForeground(SystemColor.menu);
-		lblTitle.setFont(new Font("Big John", Font.PLAIN, 20));
-		contentPane.add(lblTitle);
+		JLabel lblNewLabel_2 = new JLabel("PRODUCT INVENTORY");
+		lblNewLabel_2.setBounds(242, 152, 251, 24);
+		lblNewLabel_2.setForeground(SystemColor.menu);
+		lblNewLabel_2.setFont(new Font("Big John", Font.PLAIN, 20));
+		contentPane.add(lblNewLabel_2);
 		
-		lblProdID.setBounds(31, 186, 87, 24);
-		lblProdID.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblProdID);
+		JLabel lblNewLabel_3 = new JLabel("Product ID:");
+		lblNewLabel_3.setBounds(31, 186, 87, 24);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblNewLabel_3);
 		
-		lblname.setBounds(31, 220, 100, 24);
-		lblname.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblname);
+		JLabel lblNewLabel_3_1 = new JLabel("Name:");
+		lblNewLabel_3_1.setBounds(31, 220, 100, 24);
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblNewLabel_3_1);
 		
+		ID = new JTextField();
 		ID.setBounds(123, 191, 139, 19);
 		contentPane.add(ID);
 		ID.setColumns(10);
 		
-		lblcat.setBounds(31, 253, 87, 24);
-		lblcat.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblcat);
+		JLabel lblNewLabel_3_1_1 = new JLabel("Category:");
+		lblNewLabel_3_1_1.setBounds(31, 253, 87, 24);
+		lblNewLabel_3_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblNewLabel_3_1_1);
 		
-		lblstock.setBounds(31, 287, 87, 24);
-		lblstock.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblstock);
+		JLabel lblNewLabel_3_1_2 = new JLabel("Stock:");
+		lblNewLabel_3_1_2.setBounds(31, 287, 87, 24);
+		lblNewLabel_3_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblNewLabel_3_1_2);
 		
-		lblprice.setBounds(31, 321, 87, 24);
-		lblprice.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblprice);
+		JLabel lblNewLabel_3_1_3 = new JLabel("Price:");
+		lblNewLabel_3_1_3.setBounds(31, 321, 87, 24);
+		lblNewLabel_3_1_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblNewLabel_3_1_3);
 		
-		lbldesc.setBounds(31, 355, 87, 24);
-		lbldesc.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lbldesc);
+		JLabel lblNewLabel_3_1_4 = new JLabel("Description:");
+		lblNewLabel_3_1_4.setBounds(31, 355, 87, 24);
+		lblNewLabel_3_1_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblNewLabel_3_1_4);
 		
+		name = new JTextField();
 		name.setBounds(123, 225, 139, 19);
 		name.setColumns(10);
 		contentPane.add(name);
 		
-
+		quantity = new JTextField();
 		quantity.setBounds(123, 292, 139, 19);
 		quantity.setColumns(10);
 		contentPane.add(quantity);
 		
-
+		price = new JTextField();
 		price.setBounds(123, 326, 139, 19);
 		price.setColumns(10);
 		contentPane.add(price);
 		
+		description = new JTextField();
 		description.setBounds(123, 360, 139, 38);
 		description.setColumns(10);
 		contentPane.add(description);
@@ -171,9 +176,11 @@ public class ProductView extends JFrame {
 		contentPane.add(comboBox);
 		fillComboFromTxtFile();
 		
+		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(295, 186, 377, 292);
 		contentPane.add(scrollPane);
 		
+		table = new JTable();
 		model = new DefaultTableModel();
 		Object[] column = {"Product ID","Name","Category","Quantity","Price","Description"};
 		final Object[] row = new Object[6];
@@ -281,8 +288,8 @@ public class ProductView extends JFrame {
 		btnback.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//DashboardView first = new DashboardView();
-				//first.setVisible(true);
+				DashboardView first = new DashboardView();
+				first.setVisible(true);
 				ProductView.this.setVisible(false);
 			}
 			@Override
@@ -358,6 +365,7 @@ public class ProductView extends JFrame {
 				TransactView th = new TransactView();
 				DefaultTableModel model2 = (DefaultTableModel)th.table.getModel();
 				ProductView.setVisibility(false);
+				
 				for(int i = 0; i < index.length; i++) {
 					row[0] = model1.getValueAt(index[i], 0);
 					row[1] = model1.getValueAt(index[i], 1);
@@ -376,10 +384,6 @@ public class ProductView extends JFrame {
 		contentPane.add(btnSwitch);
 	
 	}
-protected static void setVisibility(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
 public void fillComboFromTxtFile(){
         
         String filePath = "C:\\Users\\mynam\\Desktop\\PRODUCT\\info.txt";
@@ -396,37 +400,13 @@ public void fillComboFromTxtFile(){
             	ex.printStackTrace();
             }
             
-          
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+        }   
 
-}	
+	protected static void setVisibility(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+	public JComboBox getComboBox() {
+		return comboBox;
+	}
+}

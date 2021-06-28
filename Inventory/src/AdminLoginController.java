@@ -60,7 +60,6 @@ import javax.swing.JOptionPane;
 			}
 			
 		}
-		
    class LoginListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -74,7 +73,7 @@ import javax.swing.JOptionPane;
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to go back?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					UserView first = new UserView();
+					DashboardView first = new DashboardView();
 					first.setVisible(true);
 					av.dispose();
 			}

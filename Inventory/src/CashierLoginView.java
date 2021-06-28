@@ -81,7 +81,7 @@ import javax.swing.border.EmptyBorder;
 		lblcashier.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
+				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to admin?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
 					AdminLoginView first = new AdminLoginView();
 					first.setVisible(true);
 					CashierLoginView.this.dispose();
@@ -100,7 +100,7 @@ import javax.swing.border.EmptyBorder;
 		lbladmin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
+				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to admin?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
 					AdminLoginView first = new AdminLoginView();
 					first.setVisible(true);
 					CashierLoginView.this.dispose();

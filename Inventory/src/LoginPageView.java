@@ -198,9 +198,26 @@ public class LoginPageView extends JFrame {
 		panelMainLog.add(panelAdmin);
 		
 		CloseButton.setHorizontalAlignment(SwingConstants.CENTER);
+		
 		CloseButton.setForeground(Color.BLACK);
 		CloseButton.setFont(new Font("Arial Black", Font.BOLD, 16));
 		CloseButton.setBounds(620, 0, 80, 41);
+		CloseButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
+					LoginPageView.this.dispose();
+				}
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				CloseButton.setForeground(Color.RED);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				CloseButton.setForeground(Color.BLACK);
+			}
+		});
 		prodpanel.add(CloseButton);
 		setLocationRelativeTo(null);
 	}

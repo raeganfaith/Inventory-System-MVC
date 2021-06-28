@@ -89,7 +89,7 @@ import javax.swing.border.EmptyBorder;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					UserView first = new UserView();
+					CashierLoginView first = new CashierLoginView();
 					first.setVisible(true);
 					AdminLoginView.this.dispose();
 				}
@@ -108,7 +108,7 @@ import javax.swing.border.EmptyBorder;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to switch to cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					UserView first = new UserView();
+					CashierLoginView first = new CashierLoginView();
 					first.setVisible(true);
 					AdminLoginView.this.dispose();
 				}
