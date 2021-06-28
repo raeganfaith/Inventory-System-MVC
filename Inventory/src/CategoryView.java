@@ -43,23 +43,25 @@ public class CategoryView{
 	
 	DefaultTableModel model;
 	
-	CategoryView() {	
-		this.prodpanel.setBounds(100, 100, 700, 550); //Frame size
+	CategoryView() {
+		setUndecorated(true); 
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 700, 450); //Frame size
 		prodpanel = new JPanel();
 		prodpanel.setBackground(new Color(51, 153, 153));
 		prodpanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setprodpanel(prodpanel);
-		//prodpanel.setLocation(null);
+		setRelativeLocation(null);
 		prodpanel.setLayout(null);
 		
-		prodpanel.add(ID, name);
-		prodpanel.add(lblUni, lblStore);
-		prodpanel.add(title, logo);
-		prodpanel.add(lblTitle, lblCatID);
-		prodpanel.add(lblname, btnAdd);
-		prodpanel.add(btnSave, btnClear);
-		prodpanel.add(CloseButton, btnback);
-		prodpanel.add(btnDelete, btnEdit);
+//		prodpanel.add(ID, name);
+//		prodpanel.add(lblUni, lblStore);
+//		prodpanel.add(title, logo);
+//		prodpanel.add(lblTitle, lblCatID);
+//		prodpanel.add(lblname, btnAdd);
+//		prodpanel.add(btnSave, btnClear);
+//		prodpanel.add(CloseButton, btnback);
+//		prodpanel.add(btnDelete, btnEdit);
 		
 		scrollPane.setBounds(295, 186, 377, 347); 
 		prodpanel.add(scrollPane); 
@@ -150,6 +152,26 @@ public class CategoryView{
 		prodpanel.add(btnAdd);
 		
 		//this.(prodpanel);
+	}
+
+	private void setUndecorated(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setDefaultCloseOperation(int exitOnClose) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setBounds(int i, int j, int k, int l) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setRelativeLocation(Object object) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void setprodpanel(JPanel prodpanel2) {

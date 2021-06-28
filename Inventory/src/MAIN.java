@@ -1,7 +1,11 @@
 public class MAIN {
 	public static void main(String[] args) {  
 		
-        LoginPageView lv = new LoginPageView();      
+        LoginPageView lv = new LoginPageView();    
+        
+        //DASHBOARD
+    	DashboardView dv = new DashboardView();	
+    	
         //USER
     	UserView uv = new UserView();
     	UserModel um = new UserModel();
@@ -25,10 +29,13 @@ public class MAIN {
 		AdminLoginModel model = new AdminLoginModel();
 		AdminLoginController control = new AdminLoginController(frame, model);
 		
-        //DASHBOARD
-    	DashboardView dv = new DashboardView();	
+		//CASHIER
+		CashierLoginView clv = new CashierLoginView();
+		CashierLoginModel clm = new CashierLoginModel();
+		CashierLoginController clc = new CashierLoginController(clv, clm);
+       
     	
-    	frame.setVisible(true);
+    	lv.setVisible(true);
     
     	
         

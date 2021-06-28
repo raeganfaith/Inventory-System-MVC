@@ -30,7 +30,7 @@ public class CategoryController extends CategoryModel{
 			this.cv.addSaveListener(new SaveListener());		
 			this.cv.addCloseListener(new CloseListener());
 			
-			
+			cv.setVisible(true);
 			try {
 				FileReader fr = new FileReader(cm.file);
 				BufferedReader br = new BufferedReader(fr);

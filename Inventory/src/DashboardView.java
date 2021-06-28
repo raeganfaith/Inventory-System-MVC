@@ -147,9 +147,11 @@ public class DashboardView extends JFrame {
 		lblcat.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					CategoryView first = new CategoryView();
-					first.setVisible(true);
-					DashboardView.this.dispose();
+				CategoryView cv = new CategoryView();
+		    	CategoryModel cm = new CategoryModel();
+		    	CategoryController cc = new CategoryController(cv, cm);
+		    	cv.setVisible(true);
+					//DashboardView.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -168,11 +170,11 @@ public class DashboardView extends JFrame {
 		PnlCategories.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					CategoryView first = new CategoryView();
-					first.setVisible(true);
-					DashboardView.this.setVisible(false);
-					
-					
+				CategoryView cv = new CategoryView();
+		    	CategoryModel cm = new CategoryModel();
+		    	CategoryController cc = new CategoryController(cv, cm);
+		    	cv.setVisible(true);
+				//DashboardView.this.setVisible(false);			
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -243,9 +245,11 @@ public class DashboardView extends JFrame {
 		lblUser.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					UserView first = new UserView();
-					first.setVisible(true);
-					DashboardView.this.dispose();
+				UserView uv = new UserView();
+		    	UserModel um = new UserModel();
+		    	UserController uc = new UserController(uv, um);
+		    	uv.setVisible(true);
+				DashboardView.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -265,9 +269,11 @@ public class DashboardView extends JFrame {
 		PnlUsers.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					UserView first = new UserView();
-					first.setVisible(true);
-					DashboardView.this.dispose();
+				UserView uv = new UserView();
+		    	UserModel um = new UserModel();
+		    	UserController uc = new UserController(uv, um);
+		    	uv.setVisible(true);
+				DashboardView.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {

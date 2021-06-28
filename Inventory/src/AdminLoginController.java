@@ -57,10 +57,8 @@ import javax.swing.JOptionPane;
 			am.readFile();
 			am.countLines();
 			am.logic(av.getUserName(), av.getUserPass());
-			UserView uv = new UserView();
-	    	UserModel um = new UserModel();
-	    	UserController uc = new UserController(uv, um);
-	    	uv.setVisible(true);
+//			DashboardView first = new DashboardView();
+//			first.setVisible(true);
 		}
 		}
    
@@ -68,8 +66,8 @@ import javax.swing.JOptionPane;
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to go back?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					DashboardView first = new DashboardView();
-					first.setVisible(true);
+					LoginPageView lv = new LoginPageView(); 
+					lv.setVisible(true);
 					av.dispose();
 					
 			}
