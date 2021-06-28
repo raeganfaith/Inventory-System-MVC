@@ -75,7 +75,6 @@ public class UserController {
 		}
 	}
 	class AddListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			theView.row[0] = theView.userid.getText();
@@ -89,10 +88,8 @@ public class UserController {
 			theView.role.setText("");
 			theView.user.setText("");
 			theView.password.setText("");
-			theView.phone.setText("");
-			
-		}
-		
+			theView.phone.setText("");		
+		}		
 	}
 	
 	class BackListener implements MouseListener{
@@ -100,18 +97,15 @@ public class UserController {
 		public void mouseClicked(MouseEvent e) {
 			DashboardView dv = new DashboardView();	
 			dv.setVisible(true);
-			
 		}
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+			// TODO Auto-generated method stub			
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+			// TODO Auto-generated method stub			
 		}
 
 		@Override

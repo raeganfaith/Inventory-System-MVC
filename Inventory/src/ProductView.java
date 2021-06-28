@@ -362,8 +362,11 @@ public class ProductView extends JFrame {
 				
 				Object[] row = new Object[6];
 				
-				TransactView th = new TransactView();
-				DefaultTableModel model2 = (DefaultTableModel)th.table.getModel();
+				TransactView tv = new TransactView();
+		        TransactModel tm = new TransactModel();
+		        TransactController tc = new TransactController(tv, tm);
+		        //tv.setVisible(true);
+				DefaultTableModel model2 = (DefaultTableModel)tv.table.getModel();
 				ProductView.setVisibility(false);
 				
 				for(int i = 0; i < index.length; i++) {
@@ -377,7 +380,7 @@ public class ProductView extends JFrame {
 					
 					model2.addRow(row);
 				}
-				th.setVisible(true);
+				tv.setVisible(true);
 			}
 		});
 		btnSwitch.setFont(new Font("Tahoma", Font.BOLD, 12));

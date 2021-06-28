@@ -89,19 +89,16 @@ public class CategoryView extends JFrame{
 		lblUni.setFont(new Font("Big John", Font.PLAIN, 50));
 		lblUni.setBounds(257, 32, 124, 69);
 		prodpanel.add(lblUni);
-		
-		
+			
 		lblStore.setForeground(new Color(0, 51, 51));
 		lblStore.setFont(new Font("Big John", Font.PLAIN, 50));
 		lblStore.setBounds(350, 25, 209, 82);
 		prodpanel.add(lblStore);
-		
-		
+				
 		title.setForeground(new Color(153, 204, 204));
 		title.setFont(new Font("Big John", Font.PLAIN, 17));
 		title.setBounds(258, 74, 242, 48);
 		prodpanel.add(title);
-		
 		
 		logo.setBounds(184, 0, 77, 130);
 		//Image img_logo = new ImageIcon(CategoryView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(70, 100, Image.SCALE_SMOOTH);
