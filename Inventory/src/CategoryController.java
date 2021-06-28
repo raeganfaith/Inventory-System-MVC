@@ -14,7 +14,7 @@ import java.io.FileWriter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class CategoryController extends CategoryView{
+public class CategoryController extends CategoryModel{
 		private CategoryView cv;
 		private CategoryModel cm;
 		
@@ -23,7 +23,7 @@ public class CategoryController extends CategoryView{
 			this.cm = cm;
 			
 			this.cv.addAddListener(new AddListener());;
-			this.cv.addMouseListener(new BackListener());
+			this.cv.addBackListener(new BackListener());
 			this.cv.addEditListener(new EditListener());
 			this.cv.addDelListener(new DelListener());
 			this.cv.addClearListener(new ClearListener());

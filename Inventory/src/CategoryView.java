@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-public class CategoryView extends JFrame{
+public class CategoryView{
 	
 	public JTextField ID = new JTextField(10);
 	public JTextField name = new JTextField(10);
@@ -44,14 +44,12 @@ public class CategoryView extends JFrame{
 	DefaultTableModel model;
 	
 	CategoryView() {	
-		setUndecorated(true); 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setBounds(100, 100, 700, 550); //Frame size
+		this.prodpanel.setBounds(100, 100, 700, 550); //Frame size
 		prodpanel = new JPanel();
 		prodpanel.setBackground(new Color(51, 153, 153));
 		prodpanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setprodpanel(prodpanel);
-		setLocationRelativeTo(null);
+		//prodpanel.setLocation(null);
 		prodpanel.setLayout(null);
 		
 		prodpanel.add(ID, name);
@@ -151,7 +149,7 @@ public class CategoryView extends JFrame{
 		btnAdd.setBounds(30, 289, 231, 41);
 		prodpanel.add(btnAdd);
 		
-		this.add(prodpanel);
+		//this.(prodpanel);
 	}
 
 	private void setprodpanel(JPanel prodpanel2) {
@@ -201,6 +199,16 @@ public class CategoryView extends JFrame{
 	}
 	void displaysuccesmessage(String succesMessage) {
 		JOptionPane.showMessageDialog(null, succesMessage);
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	}

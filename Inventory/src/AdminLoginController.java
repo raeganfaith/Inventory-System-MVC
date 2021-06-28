@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,20 +5,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 	public class AdminLoginController extends JFrame {
 		AdminLoginView av;
 		AdminLoginModel am;
 		String Username, Password;
-		
 		public AdminLoginController(AdminLoginView av, AdminLoginModel am) {
 				this.av = av;
 				this.am = am;	
 			this.av.addLoginListener(new LoginListener());
 			this.av.addCancelListener(new CancelListener());
 			this.av.addCloseListener(new CloseListener());
-			//this.av.addCloseListener(new CloseListener());		
+			av.setVisible(true);
 		}
+		
 		class CloseListener implements MouseListener{
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -36,27 +34,19 @@ import javax.swing.JOptionPane;
 			}
 
 			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void mousePressed(MouseEvent e) {				
 			}
-
 			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void mouseReleased(MouseEvent e) {				
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				av.CloseButton.setForeground(Color.RED);
-				
+				av.CloseButton.setForeground(Color.RED);				
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				av.CloseButton.setForeground(Color.BLACK);
-				
 			}
 			
 		}
@@ -66,9 +56,14 @@ import javax.swing.JOptionPane;
 			am.createFolder();
 			am.readFile();
 			am.countLines();
-			am.logic(av.getUserName(), av.getUserPass());	
+			am.logic(av.getUserName(), av.getUserPass());
+			UserView uv = new UserView();
+	    	UserModel um = new UserModel();
+	    	UserController uc = new UserController(uv, um);
+	    	uv.setVisible(true);
 		}
 		}
+   
 	class CancelListener implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -76,6 +71,7 @@ import javax.swing.JOptionPane;
 					DashboardView first = new DashboardView();
 					first.setVisible(true);
 					av.dispose();
+					
 			}
 		}
 	

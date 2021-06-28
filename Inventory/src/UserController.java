@@ -242,4 +242,8 @@ public class UserController {
 		
 	}
 
+	public void setVisible(boolean b) {
+	
+	}
+
 }

@@ -22,7 +22,6 @@ public class LoginPageView extends JFrame {
 	private Image img_logo2 = new ImageIcon(LoginPageView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
 	private Image img_cashier2 = new ImageIcon(LoginPageView.class.getResource("ress/cashier.png")).getImage().getScaledInstance(130, 175, Image.SCALE_SMOOTH);
 	private Image img_admin2 = new ImageIcon(LoginPageView.class.getResource("ress/admin.png")).getImage().getScaledInstance(140, 165, Image.SCALE_SMOOTH);
-	
 	private JLabel lblUni = new JLabel("UNI");
 	private JLabel lblNewLabel = new JLabel("");
 	private JLabel lblStore = new JLabel("STORE");
@@ -55,7 +54,6 @@ public class LoginPageView extends JFrame {
 		prodpanel.add(lblCash,lblCashier);
 		prodpanel.add(panelCashier,panelAdmin);
 		prodpanel.add(CloseButton);
-		
 		
 		lblUni.setForeground(new Color(245, 245, 245));
 		lblUni.setFont(new Font("Big John", Font.PLAIN, 50));
@@ -130,7 +128,7 @@ public class LoginPageView extends JFrame {
 		lblNewLabel_2.setFont(new Font("Big John", Font.PLAIN, 20));
 		panelMainLog.add(lblNewLabel_2);
 		
-	lblCash.addMouseListener(new MouseAdapter() {
+		lblCash.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to Login as Cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
@@ -148,7 +146,6 @@ public class LoginPageView extends JFrame {
 				lblCash.setForeground(Color.BLACK);
 			}
 		});
-
 		lblCashier.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -167,7 +164,6 @@ public class LoginPageView extends JFrame {
 				lblCash.setForeground(Color.BLACK);
 			}
 		});
-
 		lblCashier.setBounds(149, 51, 130, 137);
 		lblCashier.setIcon(new ImageIcon(img_cashier2));
 		panelMainLog.add(lblCashier);
@@ -186,6 +182,8 @@ public class LoginPageView extends JFrame {
 					CashierLoginView first = new CashierLoginView();
 					first.setVisible(true);
 					LoginPageView.this.dispose();
+					AdminLoginView view = new AdminLoginView();
+					//view.Screen();
 				}
 			}
 		});
@@ -197,8 +195,7 @@ public class LoginPageView extends JFrame {
 		panelAdmin.setBounds(421, 57, 130, 171);
 		panelMainLog.add(panelAdmin);
 		
-		CloseButton.setHorizontalAlignment(SwingConstants.CENTER);
-		
+		CloseButton.setHorizontalAlignment(SwingConstants.CENTER);		
 		CloseButton.setForeground(Color.BLACK);
 		CloseButton.setFont(new Font("Arial Black", Font.BOLD, 16));
 		CloseButton.setBounds(620, 0, 80, 41);

@@ -16,7 +16,6 @@ import javax.swing.border.EmptyBorder;
 
 public class AdminLoginModel extends JFrame {
 
-	//File f = new File("C:\\\\Users\\\\mynam\\\\Desktop\\\\ADMIN\\\\info.txt");
 	File f = new File("C:\\Users\\mynam\\Desktop\\ADMIN");
     int ln;
     String Username, Password;
@@ -97,7 +96,6 @@ public class AdminLoginModel extends JFrame {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }    
     }
-    
     void logic(String user, String password){
         try {
             RandomAccessFile raf = new RandomAccessFile(f+ "\\info.txt", "rw");
@@ -108,10 +106,13 @@ public class AdminLoginModel extends JFrame {
                 String forPass = raf.readLine().substring(10);
                 
                 if(user.equals(forUser) & password.equals(forPass)) {
-                    JOptionPane.showMessageDialog(null, "AdminLoginView Successfully!");
-                    UserView dv = new UserView();
-                    dv.setVisible(true);
-                    //AdminLoginView.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Login Successfull!");
+                    UserView uv = new UserView();
+        	    	UserModel um = new UserModel();
+        	    	UserController uc = new UserController(uv, um);
+        	    	uv.setVisible(true);
+                    AdminLoginView av = new AdminLoginView();
+                    av.dispose();
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");
@@ -128,8 +129,7 @@ public class AdminLoginModel extends JFrame {
         catch (IOException e) {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
-    }
-       
+    }      
     void countLines(){
         try {
             ln = 0;

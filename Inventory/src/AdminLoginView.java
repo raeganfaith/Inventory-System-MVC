@@ -28,6 +28,7 @@ import javax.swing.border.EmptyBorder;
 
 	public class AdminLoginView extends JFrame {
 		
+		
 		private Image img_logo = new ImageIcon(AdminLoginView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(140, 170, Image.SCALE_SMOOTH);
 		private Image img_admin = new ImageIcon(AdminLoginView.class.getResource("ress/admin.png")).getImage().getScaledInstance(135, 160, Image.SCALE_SMOOTH);
 		
@@ -51,6 +52,14 @@ import javax.swing.border.EmptyBorder;
 		public JPasswordField passwordField = new JPasswordField();
 		public JLabel CloseButton = new JLabel("CLOSE");
 		
+//		public static void Screen() {
+//			AdminLoginView frame = new AdminLoginView();
+//			AdminLoginModel model = new AdminLoginModel();
+//			AdminLoginController control = new AdminLoginController(frame, model);
+//			frame.setVisible(true);	
+//		}
+		
+		
 	AdminLoginView(){
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,13 +71,13 @@ import javax.swing.border.EmptyBorder;
 		setLocationRelativeTo(null);
 		prodpanel.setLayout(null);
 		
-		prodpanel.add(lblIconLogo,lblStore);
-		prodpanel.add(panelMain,lbladmn);
-		prodpanel.add(lbladmin,panel);
-		prodpanel.add(panel_2,userField);
-		prodpanel.add(panel_2,userField);
-		prodpanel.add(panel_2,userField);
-		
+//		prodpanel.add(lblIconLogo,lblStore);
+//		prodpanel.add(panelMain,lbladmn);
+//		prodpanel.add(lbladmin,panel);
+//		prodpanel.add(panel_2,userField);
+//		prodpanel.add(panel_2,userField);
+//		prodpanel.add(panel_2,userField);
+//		
 		
 		lblIconLogo.setBounds(124, 2, 148, 186);
 		prodpanel.add(lblIconLogo);
@@ -240,12 +249,9 @@ import javax.swing.border.EmptyBorder;
 		CloseButton.setFont(new Font("Arial Black", Font.BOLD, 16));
 		CloseButton.setBounds(620, 2, 80, 41);
 		prodpanel.add(CloseButton);		
-		
-		
 
 	}
 	private void setRelativeLocation(Object object) {
-		// TODO Auto-generated method stub
 		
 	}
 	void createFolder() {

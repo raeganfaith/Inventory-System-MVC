@@ -30,25 +30,6 @@ public class DashboardView extends JFrame {
 	
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					DashboardView frame = new DashboardView();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public DashboardView() {
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
