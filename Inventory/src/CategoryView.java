@@ -1,8 +1,11 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,6 +19,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 public class CategoryView extends JFrame{
+	
+	private Image img_logo = new ImageIcon(CategoryView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(70, 100, Image.SCALE_SMOOTH);
 	
 	public JTextField ID = new JTextField(10);
 	public JTextField name = new JTextField(10);
@@ -87,6 +92,7 @@ public class CategoryView extends JFrame{
 		prodpanel.add(title);
 		
 		logo.setBounds(184, 0, 77, 130);
+		logo.setIcon(new ImageIcon(img_logo));
 		prodpanel.add(logo);
 		
 		

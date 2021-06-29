@@ -1,5 +1,3 @@
-//Semi-Final User
-//UserView
 
 import java.awt.Color;
 import java.awt.Font;
