@@ -52,7 +52,7 @@ public class ProductView extends JFrame {
 	private JButton btnDelete = new JButton("DELETE");
 	private JButton btnClear = new JButton("CLEAR");
 	private JButton btnSave = new JButton("SAVE");
-	private JButton btnSwitch = new JButton("SWITCH");
+	private JButton btnSwitch = new JButton("PREVIEW");
 	static Object[] row = new Object[6];
 	static JComboBox<String> comboBox;
 	
@@ -147,7 +147,7 @@ public class ProductView extends JFrame {
 		
 		table = new JTable();
 		model = new DefaultTableModel();
-		Object[] column = {"Product ID","Name","Category","Quantity","Price"};
+		Object[] column = {"Product ID","Name","Category","Stock","Price"};
 		model.setColumnIdentifiers(column);
 		table.setModel(model);
 		scrollPane.setViewportView(table);
