@@ -86,12 +86,15 @@ public class AdminLoginModel extends JFrame {
                     dv.setVisible(true);
                     AdminLoginView av = new AdminLoginView();
                     av.setVisible(false);       
-
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");
                     AdminLoginView av = new AdminLoginView();
-                    av.setVisible(false);
+                    AdminLoginModel cm = new AdminLoginModel();
+                    AdminLoginController cc = new AdminLoginController(av, cm);
+                    av.setVisible(true);
+
+                    av.setVisible(true);
                     break;
                 }
                 for(int k = 1; k < 2; k++){
@@ -122,8 +125,7 @@ public class AdminLoginModel extends JFrame {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-//----------------Interface---------------
-    
+//----------------Interface---------------  
 	interface ReadWriteSources{
 	  void readfile();
 	  void addData();

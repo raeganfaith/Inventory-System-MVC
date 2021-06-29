@@ -7,9 +7,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 	public class TransactModel extends JFrame {
-		String CfilePath = "C:\\Users\\mynam\\Desktop\\PRODUCT\\TRANSACTHISTORY.txt";
+		String CfilePath = "C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM\\TRANSACTHISTORY.txt";
 		File Cfile = new File(CfilePath);
-		String filePath = "C:\\Users\\mynam\\Desktop\\PRODUCT\\TRANSACTHISTORY.txt";
+		String filePath = "C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM\\TRANSACTHISTORY.txt";
 		File file = new File(filePath);
 		
 		public TransactModel() {

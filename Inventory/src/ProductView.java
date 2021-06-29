@@ -242,6 +242,9 @@ public class ProductView extends JFrame {
 	int Validation(String Message1, String Message2) {
 		return JOptionPane.showConfirmDialog(null, Message1, Message2, JOptionPane.YES_NO_OPTION);	
 	}
+	void addTableListener(MouseListener listenForTable) {
+		table.addMouseListener(listenForTable);
+	}
 
 	public Object[] getRow() {
 		return row;

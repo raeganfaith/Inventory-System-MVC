@@ -13,18 +13,16 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class UserController {
-	
+public class UserController {	
 	UserView theView;
-	UserModel theModel;
-	
+	UserModel theModel;	
 	public UserController(UserView theView, UserModel theModel) {
 		
 		this.theView = theView;
 		this.theModel = theModel;
 		
 		this.theView.addAddListener(new AddListener());
-		this.theView.addMouseListener(new BackListener());
+		this.theView.addBackListener(new BackListener());
 		this.theView.addCloseListener(new CloseListener());
 		this.theView.addDeleteListener(new DeleteListener());
 		this.theView.addEditListener(new EditListener());
@@ -139,25 +137,18 @@ public class UserController {
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+			// TODO Auto-generated method stub			
 		}
-
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			theView.CloseButton.setForeground(Color.RED);
-			
+			theView.CloseButton.setForeground(Color.RED);			
 		}
-
 		@Override
 		public void mouseExited(MouseEvent e) {
-			theView.CloseButton.setForeground(Color.BLACK);
-			
-		}
-		
+			theView.CloseButton.setForeground(Color.BLACK);			
+		}		
 	}
 	class DeleteListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			int i = theView.table.getSelectedRow();
@@ -167,7 +158,6 @@ public class UserController {
 		
 	}
 	class EditListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			int i = theView.table .getSelectedRow();
@@ -175,14 +165,11 @@ public class UserController {
 			theView.model.setValueAt(theView.role.getText(), i, 1);
 			theView.model.setValueAt(theView.user.getText(), i, 2);
 			theView.model.setValueAt(theView.password.getText(), i, 3);
-			theView.model.setValueAt(theView.phone.getText(), i, 4);
-			
+			theView.model.setValueAt(theView.phone.getText(), i, 4);		
 		}
 		
-	}
-	
+	}	
 	class ClearListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			theView.userid.setText("");
@@ -190,21 +177,17 @@ public class UserController {
 			theView.user.setText("");
 			theView.password.setText("");
 			theView.phone.setText("");		
-		}
-		
+		}	
 	}
-	
 	class TableListener implements MouseListener{
-
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			int i = theView.table.getSelectedRow();
 			theView.userid.setText(theView.model.getValueAt(i, 0).toString());
-			theView.role.setText(theView.model.getValueAt(i, 0).toString());
-			theView.user.setText(theView.model.getValueAt(i, 0).toString());
-			theView.password.setText(theView.model.getValueAt(i, 0).toString());
-			theView.phone.setText(theView.model.getValueAt(i, 0).toString());
-			
+			theView.role.setText(theView.model.getValueAt(i, 1).toString());
+			theView.user.setText(theView.model.getValueAt(i, 2).toString());
+			theView.password.setText(theView.model.getValueAt(i, 3).toString());
+			theView.phone.setText(theView.model.getValueAt(i, 4).toString());		
 		}
 		@Override
 		public void mousePressed(MouseEvent e) {

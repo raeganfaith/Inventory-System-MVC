@@ -211,6 +211,9 @@ public class CategoryView extends JFrame{
 	void displaysuccesmessage(String succesMessage) {
 		JOptionPane.showMessageDialog(null, succesMessage);
 	}
+	void addTableListener(MouseListener listenForTable) {
+		table.addMouseListener(listenForTable);
+	}
 	
 	}
 	

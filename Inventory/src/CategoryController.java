@@ -9,25 +9,25 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
 public class CategoryController extends CategoryView{
 		private CategoryView cv;
-		private CategoryModel cm;
-		
+		private CategoryModel cm;	
 		public CategoryController (CategoryView cv, CategoryModel cm) {
 			this.cv = cv;
 			this.cm = cm;
 			
 			this.cv.addAddListener(new AddListener());;
-			this.cv.addMouseListener(new BackListener());
+			this.cv.addBackListener(new BackListener());
 			this.cv.addEditListener(new EditListener());
 			this.cv.addDelListener(new DelListener());
 			this.cv.addClearListener(new ClearListener());
 			this.cv.addSaveListener(new SaveListener());		
-			this.cv.addCloseListener(new CloseListener());	
+			this.cv.addCloseListener(new CloseListener());
+			this.cv.addTableListener(new TableListener());
 			try {
 				FileReader fr = new FileReader(cm.file);
 				BufferedReader br = new BufferedReader(fr);
@@ -141,7 +141,6 @@ public class CategoryController extends CategoryView{
 					cv.setVisible(true);
 				}
 			}
-
 			@Override
 			public void mousePressed(MouseEvent e) {
 			}
@@ -160,6 +159,30 @@ public class CategoryController extends CategoryView{
 				
 			}
 			
+		}
+		class TableListener implements MouseListener{
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int i = cv.table.getSelectedRow();
+				cv.ID.setText(cv.model.getValueAt(i, 0).toString());
+				cv.name.setText(cv.model.getValueAt(i, 1).toString());	
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+		
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+			
+			}	
 		}
 	}
 		

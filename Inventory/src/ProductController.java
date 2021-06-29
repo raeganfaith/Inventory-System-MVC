@@ -19,7 +19,6 @@ public class ProductController {
 	
 	private ProductView theView;
 	private ProductModel theModel;	
-	
 	public ProductController( ProductView theView, ProductModel theModel) {
 		this.theView = theView;
 		this.theModel = theModel;	
@@ -31,6 +30,7 @@ public class ProductController {
 		this.theView.addSaveListener(new SaveListener());
 		this.theView.addDeleteListener(new DeleteListener());
 		this.theView.addSwitchListener(new SwitchListener());
+		this.theView.addTableListener(new TableListener());
 		
 		try {
 			FileReader fr = new FileReader(theModel.ProdFile);
@@ -215,6 +215,34 @@ public class ProductController {
 		}
 	
 	}
+	//ID, name, quantity, price,
+	class TableListener implements MouseListener{
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			int i = theView.table.getSelectedRow();
+			theView.ID.setText(theView.model.getValueAt(i, 0).toString());
+			theView.name.setText(theView.model.getValueAt(i, 1).toString());
+			theView.quantity.setText(theView.model.getValueAt(i, 2).toString());
+			theView.price.setText(theView.model.getValueAt(i, 3).toString());	
+		}
+		@Override
+		public void mousePressed(MouseEvent e) {
 	
+		}
+		@Override
+		public void mouseReleased(MouseEvent e) {		
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {
+		
+		}
+		@Override
+		public void mouseExited(MouseEvent e) {
+		
+		}	
+	}
 
+	public void setVisible(boolean b) {
+	
+	}
 }

@@ -27,7 +27,7 @@ public class TransactController extends JFrame {
 		this.tv = tv;
 		this.tm = tm;
 		
-		this.tv.addMouseListener(new BackListener());;
+		this.tv.addBackListener(new BackListener());;
 		this.tv.addSaveListener(new SaveListener());		
 		this.tv.addCloseListener(new CloseListener());
 		

@@ -101,11 +101,15 @@ public class CashierLoginModel extends JFrame {
                     JOptionPane.showMessageDialog(null, "Login Successfully!");
                     DashboardView2 dv = new DashboardView2();	
                     dv.setVisible(true);                
+                    CashierLoginView cv = new CashierLoginView();
                     cv.setVisible(false);
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");
-                    cv.show();
+                    CashierLoginView cv = new CashierLoginView();
+                    CashierLoginModel cm = new CashierLoginModel();
+                    CashierLoginController cc = new CashierLoginController(cv, cm);
+                    cv.setVisible(true);
                     break;
                 }
                 for(int k = 1; k < 2; k++){
