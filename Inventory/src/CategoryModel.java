@@ -1,10 +1,9 @@
-
 import java.io.File;
 
 public class CategoryModel{	
-	String CfilePath = "C:\\Users\\mynam\\Desktop\\PRODUCT\\CATEGORY.txt";
+	String CfilePath = "C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM\\CATEGORY.txt";
 	File Cfile = new File(CfilePath);
-	String filePath = "C:\\Users\\mynam\\Desktop\\PRODUCT\\CATEGORY.txt";
+	String filePath = "C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM\\CATEGORY.txt";
 	File file = new File(filePath);
 	String ID;
 	String name;

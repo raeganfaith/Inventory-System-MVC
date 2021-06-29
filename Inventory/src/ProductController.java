@@ -115,16 +115,11 @@ public class ProductController {
 		    	theView.setVisible(true);
 			}
 		}
-
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
 		}
-
 		@Override
-		public void mouseReleased(MouseEvent e) {
-	
+		public void mouseReleased(MouseEvent e) {	
 		}
 		@Override
 		public void mouseEntered(MouseEvent e) {
@@ -167,7 +162,6 @@ public class ProductController {
 				bw.close();
 				fw.close();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
@@ -215,7 +209,6 @@ public class ProductController {
 		}
 	
 	}
-	//ID, name, quantity, price,
 	class TableListener implements MouseListener{
 		@Override
 		public void mouseClicked(MouseEvent e) {

@@ -1,23 +1,15 @@
-
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.UIManager;
-import javax.swing.border.LineBorder;
 
 public class DashboardView2 extends JFrame {
 	private Image img_logo = new ImageIcon(DashboardView2.class.getResource("ress/logoh.png")).getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
@@ -25,8 +17,6 @@ public class DashboardView2 extends JFrame {
 	private Image img_category = new ImageIcon(DashboardView.class.getResource("ress/CATEGORY.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
 	private Image img_transact = new ImageIcon(DashboardView2.class.getResource("ress/TRANSACT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
 	private Image img_exit = new ImageIcon(DashboardView2.class.getResource("ress/EXIT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
-	private Image img_user = new ImageIcon(DashboardView2.class.getResource("ress/USER.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
-	
 	private JPanel contentPane;
 
 	public DashboardView2() {
@@ -291,11 +281,7 @@ public class DashboardView2 extends JFrame {
 		lblExit.setBounds(10, 0, 163, 135);
 		lblExit.setIcon(new ImageIcon(img_exit));
 		PnlExit.add(lblExit);
-		
-	
-		
-		
-		
+
 	}
 
 }

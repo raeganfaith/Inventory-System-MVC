@@ -42,7 +42,6 @@ public class UserController {
 				theView.model.addRow(rows);
 			}	
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}		
 	}	
@@ -166,8 +165,7 @@ public class UserController {
 			theView.model.setValueAt(theView.user.getText(), i, 2);
 			theView.model.setValueAt(theView.password.getText(), i, 3);
 			theView.model.setValueAt(theView.phone.getText(), i, 4);		
-		}
-		
+		}	
 	}	
 	class ClearListener implements ActionListener{
 		@Override

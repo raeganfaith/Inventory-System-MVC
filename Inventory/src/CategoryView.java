@@ -1,21 +1,8 @@
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,7 +23,6 @@ public class CategoryView extends JFrame{
 	private JLabel lblStore = new JLabel("STORE");
 	private JLabel title = new JLabel("Inventory system");
 	private JLabel logo = new JLabel("");
-	//private JPanel panel = new JPanel();
 	private JLabel lblTitle = new JLabel("CATEGORY INVENTORY");
 	private JLabel lblCatID = new JLabel("Category ID:");
 	private JLabel lblname = new JLabel("Name:");
@@ -101,8 +87,6 @@ public class CategoryView extends JFrame{
 		prodpanel.add(title);
 		
 		logo.setBounds(184, 0, 77, 130);
-		//Image img_logo = new ImageIcon(CategoryView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(70, 100, Image.SCALE_SMOOTH);
-		//logo.setIcon(new ImageIcon(img_logo));
 		prodpanel.add(logo);
 		
 		

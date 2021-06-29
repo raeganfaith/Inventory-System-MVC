@@ -1,7 +1,6 @@
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.SystemColor;
@@ -12,8 +11,6 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -53,13 +50,7 @@ import javax.swing.border.EmptyBorder;
 		public static void main(String[] args) {	
 		        LoginPageView lv = new LoginPageView();    
 		    	lv.setVisible(true);	
-			}
-//		public static void Screen() {
-//			AdminLoginView frame = new AdminLoginView();
-//			AdminLoginModel model = new AdminLoginModel();
-//			AdminLoginController control = new AdminLoginController(frame, model);
-//			frame.setVisible(true);	
-//		}	
+			}	
 	AdminLoginView(){
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

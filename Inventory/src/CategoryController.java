@@ -85,7 +85,7 @@ public class CategoryController extends CategoryView{
 			public void actionPerformed(ActionEvent e) {
 				cv.displaysuccesmessage("Successfully Saved!");
 				
-				String filePath = "C:\\\\Users\\\\mynam\\\\Desktop\\\\PRODUCT\\\\CATEGORY.txt";
+				String filePath = "C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM\\CATEGORY.txt";
 				File file = new File(filePath);
 				
 				try {
