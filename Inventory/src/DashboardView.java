@@ -1,4 +1,3 @@
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -98,9 +97,11 @@ public class DashboardView extends JFrame {
 		lblProducts.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					ProductView first = new ProductView();
-					first.setVisible(true);
-					DashboardView.this.dispose();
+				ProductView theView = new ProductView();
+				ProductModel theModel = new ProductModel();
+		        ProductController pc = new ProductController(theView, theModel);    
+		    	theView.setVisible(true);
+				DashboardView.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -119,9 +120,11 @@ public class DashboardView extends JFrame {
 		PnlProducts.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					ProductView first = new ProductView();
-					first.setVisible(true);
-					DashboardView.this.setVisible(false);
+				ProductView theView = new ProductView();
+				ProductModel theModel = new ProductModel();
+		        ProductController pc = new ProductController(theView, theModel);    
+		    	theView.setVisible(true);
+				DashboardView.this.setVisible(false);
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {

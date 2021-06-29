@@ -162,8 +162,6 @@ public class ProductView extends JFrame {
 		table = new JTable();
 		model = new DefaultTableModel();
 		Object[] column = {"Product ID","Name","Category","Quantity","Price","Description"};
-		//final Object[] row = new Object[6];
-		//Object[] row = new Object [0];
 		model.setColumnIdentifiers(column);
 		table.setModel(model);
 		scrollPane.setViewportView(table);

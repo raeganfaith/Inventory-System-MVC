@@ -22,9 +22,7 @@ public class ProductController {
 	
 	public ProductController( ProductView theView, ProductModel theModel) {
 		this.theView = theView;
-		this.theModel = theModel;
-	
-		
+		this.theModel = theModel;	
 		this.theView.addAddListener(new AddListener());
 		this.theView.addBackListener(new BackListener());
 		this.theView.addClearListener(new ClearListener());
@@ -49,13 +47,9 @@ public class ProductController {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		
-		
 	}
 	
 	class AddListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			theView.row[0] = theView.ID.getText();
@@ -107,10 +101,8 @@ public class ProductController {
 		public void mouseExited(MouseEvent e) {
 			theView.btnback.setForeground(Color.BLACK);
 			
-		}
-		
-	}
-	
+		}	
+	}	
 	class ClearListener implements ActionListener{
 
 		@Override
@@ -120,26 +112,32 @@ public class ProductController {
 			theView.comboBox.setSelectedItem("");
 			theView.quantity.setText("");
 			theView.price.setText("");
-			theView.description.setText("");
-		
-			
+			theView.description.setText("");		
 		}
 		
 	}
-	
 	class CloseListener implements MouseListener{
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			int response = theView.Validation("Are you sure you want to exit?", "Confirmation");
 			if (response==JOptionPane.YES_OPTION ) {
+				ProductView theView = new ProductView();
+				ProductModel theModel = new ProductModel();
+		        ProductController pc = new ProductController(theView, theModel);    
 				theView.dispose();
 			}
 			else if (response==JOptionPane.NO_OPTION) {
-				theView.setVisible(true);
+				ProductView theView = new ProductView();
+				ProductModel theModel = new ProductModel();
+		        ProductController pc = new ProductController(theView, theModel);    
+		    	theView.setVisible(true);
 			}
 			else if (response==JOptionPane.CLOSED_OPTION) {
-				theView.setVisible(true);
+				ProductView theView = new ProductView();
+				ProductModel theModel = new ProductModel();
+		        ProductController pc = new ProductController(theView, theModel);    
+		    	theView.setVisible(true);
 			}
 			
 		}
