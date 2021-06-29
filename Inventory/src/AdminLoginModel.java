@@ -35,6 +35,7 @@ public class AdminLoginModel extends JFrame {
             f.mkdirs();
         }
 	}
+
 	void readFile(){
         try {
             FileReader fr = new FileReader(f+ "\\info.txt");
@@ -50,14 +51,13 @@ public class AdminLoginModel extends JFrame {
             }
         }
     }
-    
+
     void addData(String user,String password){
         try {
             RandomAccessFile raf = new RandomAccessFile(f+ "\\info.txt", "rw");
             for(int i = 0; i < ln; i++) {
                 raf.readLine();
             }
-            //if condition added after video to have no lines on first entry
             if(ln > 0) {
             raf.writeBytes("\r\n");
             raf.writeBytes("\r\n");
@@ -72,28 +72,6 @@ public class AdminLoginModel extends JFrame {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-//    void checkData(String user, String password){
-//        try {
-//            RandomAccessFile raf = new RandomAccessFile(f+ "\\info.txt", "rw");
-//            
-//            String line = raf.readLine();
-//            Username = line.substring(10);
-//            Password = raf.readLine().substring(10);
-//            
-//            if(user.equals(Username)& password.equals(Password)) {
-//                JOptionPane.showMessageDialog(null, "Login Successful!");
-//            }
-//            else {
-//                JOptionPane.showMessageDialog(null, "wrong user/Password");
-//            }
-//        } 
-//        catch (FileNotFoundException e) {
-//            Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
-//        } 
-//        catch (IOException e) {
-//            Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
-//        }    
-//    }
     void logic(String user, String password){
         try {
             RandomAccessFile raf = new RandomAccessFile(f+ "\\info.txt", "rw");
@@ -106,19 +84,14 @@ public class AdminLoginModel extends JFrame {
                 if(user.equals(forUser) & password.equals(forPass)) {
                     JOptionPane.showMessageDialog(null, "Login Successfull!");
                     DashboardView dv = new DashboardView();	
-                    dv.setVisible(true);
-                    
+                    dv.setVisible(true);                
                     AdminLoginView av = new AdminLoginView();
                     AdminLoginModel am = new AdminLoginModel();
                     AdminLoginController ac = new AdminLoginController(av , am);
-                    av.setVisible(false);
+                    av.hide();
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");
-//                  AdminLoginView frame = new AdminLoginView();
-//            		AdminLoginModel model = new AdminLoginModel();
-//            		AdminLoginController control = new AdminLoginController(frame, model);
-//            		frame.setVisible(true);
                     break;
                 }
                 for(int k = 1; k < 2; k++){
@@ -149,5 +122,26 @@ public class AdminLoginModel extends JFrame {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-	
+	//----------------Interface---------------
+	interface ReadWriteSources{
+	  void readfile();
+	  void addData();
+	  void logic();
+	 }
+	public class InterfaceExample implements ReadWriteSources {
+		@Override
+		public void readfile() {
+			System.out.println("Successfully read the file!");
+		}
+		@Override
+		public void addData() {
+			System.out.println("Successfully added data!");		
+		}
+		@Override
+		public void logic() {
+			System.out.println("Successfully passed the logic!");
+		}		
+	}
+ //-----------------------------------------------  
+
 }

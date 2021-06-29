@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class LoginPageView extends JFrame {
-
+	
 	private Image img_logo2 = new ImageIcon(LoginPageView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
 	private Image img_cashier2 = new ImageIcon(LoginPageView.class.getResource("ress/cashier.png")).getImage().getScaledInstance(130, 175, Image.SCALE_SMOOTH);
 	private Image img_admin2 = new ImageIcon(LoginPageView.class.getResource("ress/admin.png")).getImage().getScaledInstance(140, 165, Image.SCALE_SMOOTH);
@@ -35,7 +35,7 @@ public class LoginPageView extends JFrame {
 	public JPanel panelAdmin = new JPanel();
 	public JPanel prodpanel = new JPanel();
 	public JLabel CloseButton = new JLabel("CLOSE");
-	
+
 	LoginPageView(){
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -136,8 +136,10 @@ public class LoginPageView extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to Login as Cashier?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					CashierLoginView first = new CashierLoginView();
-					first.setVisible(true);
+					CashierLoginView clv = new CashierLoginView();
+					CashierLoginModel clm = new CashierLoginModel();
+					CashierLoginController clc = new CashierLoginController(clv, clm);
+					clv.setVisible(true);
 					LoginPageView.this.dispose();
 				}
 			}

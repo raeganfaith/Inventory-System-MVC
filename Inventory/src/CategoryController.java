@@ -27,9 +27,7 @@ public class CategoryController extends CategoryView{
 			this.cv.addDelListener(new DelListener());
 			this.cv.addClearListener(new ClearListener());
 			this.cv.addSaveListener(new SaveListener());		
-			this.cv.addCloseListener(new CloseListener());
-			
-			
+			this.cv.addCloseListener(new CloseListener());	
 			try {
 				FileReader fr = new FileReader(cm.file);
 				BufferedReader br = new BufferedReader(fr);
@@ -105,39 +103,28 @@ public class CategoryController extends CategoryView{
 					fw.close();
 				} catch (Exception e1) {
 					e1.printStackTrace();
-				}
-				
+				}			
 			}
 		}
 		class BackListener implements MouseListener{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				DashboardView dv = new DashboardView();	
-				dv.setVisible(true);
-				
+				dv.setVisible(true);		
 			}
 			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void mousePressed(MouseEvent e) {	
 			}
-
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
-
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				cv.btnback.setForeground(Color.RED);
-				
+				cv.btnback.setForeground(Color.RED);				
 			}
-
 			@Override
 			public void mouseExited(MouseEvent e) {
-				cv.btnback.setForeground(Color.BLACK);
-				
+				cv.btnback.setForeground(Color.BLACK);				
 			}
 		}
 		class CloseListener implements MouseListener{
@@ -157,22 +144,16 @@ public class CategoryController extends CategoryView{
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
-
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+	
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				cv.CloseButton.setForeground(Color.RED);
-				
+				cv.CloseButton.setForeground(Color.RED);				
 			}
-
 			@Override
 			public void mouseExited(MouseEvent e) {
 				cv.CloseButton.setForeground(Color.BLACK);

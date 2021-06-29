@@ -104,7 +104,7 @@ public class CashierLoginModel extends JFrame {
                 
                 if(user.equals(forUser) & password.equals(forPass)) {
                     JOptionPane.showMessageDialog(null, "Login Successfully!");
-                    DashboardView dv = new DashboardView();	
+                    DashboardView2 dv = new DashboardView2();	
                     dv.setVisible(true);
                     
                     CashierLoginView clv = new CashierLoginView();

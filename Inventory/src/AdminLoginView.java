@@ -50,14 +50,16 @@ import javax.swing.border.EmptyBorder;
 		public JPasswordField passwordField = new JPasswordField();
 		public JLabel CloseButton = new JLabel("CLOSE");
 		
+		public static void main(String[] args) {	
+		        LoginPageView lv = new LoginPageView();    
+		    	lv.setVisible(true);	
+			}
 //		public static void Screen() {
 //			AdminLoginView frame = new AdminLoginView();
 //			AdminLoginModel model = new AdminLoginModel();
 //			AdminLoginController control = new AdminLoginController(frame, model);
 //			frame.setVisible(true);	
-//		}
-		
-		
+//		}	
 	AdminLoginView(){
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -227,7 +229,6 @@ import javax.swing.border.EmptyBorder;
 		ShowPass.setBackground(SystemColor.controlHighlight);
 		ShowPass.setBounds(437, 170, 152, 13);
 		panelMain.add(ShowPass);
-		
 		btnLogin.setBackground(new Color(51, 153, 153));
 		btnLogin.setBounds(415, 189, 101, 43);
 		panelMain.add(btnLogin);
@@ -253,13 +254,6 @@ import javax.swing.border.EmptyBorder;
 		prodpanel.add(CloseButton);		
 
 	}
-	private void setRelativeLocation(Object object) {
-		
-	}
-	void createFolder() {
-		
-	}
-	
 	public String getUserName() {
 		return userField.getText();
 	}	

@@ -19,18 +19,17 @@ import java.awt.event.MouseEvent;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
-public class DashboardView extends JFrame {
-
-	private Image img_logo = new ImageIcon(DashboardView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
-	private Image img_product = new ImageIcon(DashboardView.class.getResource("ress/PRODUCT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
+public class DashboardView2 extends JFrame {
+	private Image img_logo = new ImageIcon(DashboardView2.class.getResource("ress/logoh.png")).getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
+	private Image img_product = new ImageIcon(DashboardView2.class.getResource("ress/PRODUCT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
 	private Image img_category = new ImageIcon(DashboardView.class.getResource("ress/CATEGORY.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
-	private Image img_transact = new ImageIcon(DashboardView.class.getResource("ress/TRANSACT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
-	private Image img_exit = new ImageIcon(DashboardView.class.getResource("ress/EXIT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
-	private Image img_user = new ImageIcon(DashboardView.class.getResource("ress/USER.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
+	private Image img_transact = new ImageIcon(DashboardView2.class.getResource("ress/TRANSACT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
+	private Image img_exit = new ImageIcon(DashboardView2.class.getResource("ress/EXIT.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
+	private Image img_user = new ImageIcon(DashboardView2.class.getResource("ress/USER.png")).getImage().getScaledInstance(130, 110, Image.SCALE_SMOOTH);
 	
 	private JPanel contentPane;
 
-	public DashboardView() {
+	public DashboardView2() {
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 550); //Frame size
@@ -75,7 +74,7 @@ public class DashboardView extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
-					DashboardView.this.dispose();
+					DashboardView2.this.dispose();
 				}
 			}
 			@Override
@@ -100,7 +99,7 @@ public class DashboardView extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 					ProductView first = new ProductView();
 					first.setVisible(true);
-					DashboardView.this.dispose();
+					DashboardView2.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -121,7 +120,7 @@ public class DashboardView extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 					ProductView first = new ProductView();
 					first.setVisible(true);
-					DashboardView.this.setVisible(false);
+					DashboardView2.this.setVisible(false);
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -149,7 +148,7 @@ public class DashboardView extends JFrame {
 		    	CategoryModel cm = new CategoryModel();
 		    	CategoryController cc = new CategoryController(cv, cm);
 		    	cv.setVisible(true);
-				DashboardView.this.dispose();
+				DashboardView2.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -172,7 +171,7 @@ public class DashboardView extends JFrame {
 		    	CategoryModel cm = new CategoryModel();
 		    	CategoryController cc = new CategoryController(cv, cm);
 		    	cv.setVisible(true);
-				DashboardView.this.setVisible(false);			
+				DashboardView2.this.setVisible(false);			
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -200,9 +199,7 @@ public class DashboardView extends JFrame {
 		        TransactModel tm = new TransactModel();
 		        TransactController tc = new TransactController(tv, tm);
 		        tv.setVisible(true);
-		        
-		        DashboardView dv = new DashboardView();
-				dv.setVisible(false);
+				DashboardView2.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -225,7 +222,7 @@ public class DashboardView extends JFrame {
 		        TransactModel tm = new TransactModel();
 		        TransactController tc = new TransactController(tv, tm);
 		        tv.setVisible(true);
-				DashboardView.this.dispose();
+				DashboardView2.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -244,60 +241,8 @@ public class DashboardView extends JFrame {
 		lbltransact.setIcon(new ImageIcon(img_transact));
 		PnlTransactionHistory.add(lbltransact);
 		
-		JLabel lblUser = new JLabel("USER");
-		lblUser.setBounds(166, 486, 131, 33);
-		lblUser.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				UserView uv = new UserView();
-		    	UserModel um = new UserModel();
-		    	UserController uc = new UserController(uv, um);
-		    	uv.setVisible(true);
-				DashboardView.this.dispose();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				lblUser.setForeground(Color.WHITE);
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				lblUser.setForeground(Color.BLACK);
-			}});
-		lblUser.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUser.setForeground(new Color(0, 51, 51));
-		lblUser.setFont(new Font("Big John", Font.PLAIN, 20));
-		contentPane.add(lblUser);
-		
-		JPanel PnlUsers = new JPanel();
-		PnlUsers.setBounds(156, 352, 163, 131);
-		PnlUsers.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				UserView uv = new UserView();
-		    	UserModel um = new UserModel();
-		    	UserController uc = new UserController(uv, um);
-		    	uv.setVisible(true);
-				DashboardView.this.dispose();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				lblUser.setForeground(Color.WHITE);
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				lblUser.setForeground(Color.BLACK);
-			}});
-		PnlUsers.setBackground(new Color(51, 153, 153));
-		contentPane.add(PnlUsers);
-		PnlUsers.setLayout(null);
-		
-		JLabel lblUsers = new JLabel("");
-		lblUsers.setBounds(10, 0, 173, 145);
-		lblUsers.setIcon(new ImageIcon(img_user));
-		PnlUsers.add(lblUsers);
-		
 		JLabel lblexit = new JLabel("EXIT");
-		lblexit.setBounds(385, 482, 131, 41);
+		lblexit.setBounds(258, 482, 131, 41);
 		lblexit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -316,14 +261,14 @@ public class DashboardView extends JFrame {
 		contentPane.add(lblexit);
 		
 		JPanel PnlExit = new JPanel();
-		PnlExit.setBounds(375, 352, 163, 125);
+		PnlExit.setBounds(248, 352, 163, 125);
 		PnlExit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(JOptionPane.showConfirmDialog(null, "Do you want to Exit?", "Confirmation", JOptionPane.YES_NO_OPTION) == 0) {
 					LoginPageView first = new LoginPageView();
 					first.setVisible(true);
-					DashboardView.this.dispose();
+					DashboardView2.this.dispose();
 				}
 			}
 			@Override
