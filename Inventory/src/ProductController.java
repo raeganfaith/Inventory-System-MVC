@@ -69,12 +69,9 @@ public class ProductController {
 	class BackListener implements MouseListener{
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			ProductView theView = new ProductView();
-			ProductModel theModel = new ProductModel();
-	        ProductController pc = new ProductController(theView, theModel);    
-	    	theView.setVisible(true);
 			DashboardView dv = new DashboardView();	
-			dv.setVisible(true);				
+			dv.setVisible(true);
+			theView.dispose();
 		}
 		@Override
 		public void mousePressed(MouseEvent e) {			

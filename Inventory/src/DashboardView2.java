@@ -97,9 +97,11 @@ public class DashboardView2 extends JFrame {
 		lblProducts.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					ProductView first = new ProductView();
-					first.setVisible(true);
-					DashboardView2.this.dispose();
+				ProductView theView = new ProductView();
+				ProductModel theModel = new ProductModel();
+		        ProductController pc = new ProductController(theView, theModel);    
+		    	theView.setVisible(true);
+				DashboardView2.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -118,9 +120,11 @@ public class DashboardView2 extends JFrame {
 		PnlProducts.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-					ProductView first = new ProductView();
-					first.setVisible(true);
-					DashboardView2.this.setVisible(false);
+				ProductView theView = new ProductView();
+				ProductModel theModel = new ProductModel();
+		        ProductController pc = new ProductController(theView, theModel);    
+		    	theView.setVisible(true);
+				DashboardView2.this.dispose();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {

@@ -13,8 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 public class AdminLoginModel extends JFrame {
+	
 	File f = new File("C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM");
     int ln;
     String Username, Password;
@@ -35,7 +35,6 @@ public class AdminLoginModel extends JFrame {
             f.mkdirs();
         }
 	}
-
 	void readFile(){
         try {
             FileReader fr = new FileReader(f+ "\\ADMIN.txt");
@@ -51,7 +50,6 @@ public class AdminLoginModel extends JFrame {
             }
         }
     }
-
     void addData(String user,String password){
         try {
             RandomAccessFile raf = new RandomAccessFile(f+ "\\ADMIN.txt", "rw");
@@ -122,7 +120,8 @@ public class AdminLoginModel extends JFrame {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-	//----------------Interface---------------
+//----------------Interface---------------
+    
 	interface ReadWriteSources{
 	  void readfile();
 	  void addData();
@@ -142,6 +141,7 @@ public class AdminLoginModel extends JFrame {
 			System.out.println("Successfully passed the logic!");
 		}		
 	}
+	
  //-----------------------------------------------  
 
 }

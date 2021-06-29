@@ -74,19 +74,14 @@ public class TransactController extends JFrame {
 	}
 	class BackListener implements MouseListener{
 		@Override
-		public void mouseClicked(MouseEvent e) {
-			TransactView tv = new TransactView();
-	        TransactModel tm = new TransactModel();
-	        TransactController tc = new TransactController(tv, tm);
-	        tv.setVisible(false);
+		public void mouseClicked(MouseEvent e) {		
 			DashboardView dv = new DashboardView();	
-			dv.setVisible(true);			
+			dv.setVisible(true);
+	        tv.dispose();
 			
 		}
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override

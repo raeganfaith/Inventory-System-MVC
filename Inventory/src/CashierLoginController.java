@@ -34,17 +34,12 @@ import javax.swing.JOptionPane;
 					clv.setVisible(true);
 				}
 			}
-
 			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void mousePressed(MouseEvent e) {				
 			}
 
 			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+			public void mouseReleased(MouseEvent e) {			
 			}
 
 			@Override
@@ -67,7 +62,8 @@ import javax.swing.JOptionPane;
 			clm.createFolder();
 			clm.readFile();
 			clm.countLines();
-			clm.logic(clv.getUserName(), clv.getUserPass());	
+			clm.logic(clv.getUserName(), clv.getUserPass());
+			clv.dispose();
 		}
 		}
 	class CancelListener implements ActionListener{

@@ -100,11 +100,11 @@ public class ProductView extends JFrame {
 		lblTitle.setFont(new Font("Big John", Font.PLAIN, 20));
 		contentPane.add(lblTitle);
 		
-		lblProdID.setBounds(31, 186, 100, 24);
+		lblProdID.setBounds(31, 186, 100, 30);
 		lblProdID.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblProdID);
 		
-		lblname.setBounds(31, 226, 100, 24);
+		lblname.setBounds(31, 226, 100, 35);
 		lblname.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblname);
 		
@@ -112,11 +112,11 @@ public class ProductView extends JFrame {
 		contentPane.add(ID);
 		ID.setColumns(10);
 		
-		lblcat.setBounds(31, 271, 87, 24);
+		lblcat.setBounds(31, 271, 87, 34);
 		lblcat.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblcat);
 		
-		lblprice.setBounds(31, 366, 87, 24);
+		lblprice.setBounds(31, 366, 87, 30);
 		lblprice.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblprice);
 		
@@ -191,7 +191,7 @@ public class ProductView extends JFrame {
 		
 		JLabel lblStock = new JLabel("Stock:");
 		lblStock.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblStock.setBounds(31, 320, 87, 24);
+		lblStock.setBounds(31, 320, 87, 36);
 		contentPane.add(lblStock);
 		
 	}

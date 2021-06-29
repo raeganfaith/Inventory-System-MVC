@@ -46,10 +46,8 @@ public class UserController {
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
-		
-	}
-	
+		}		
+	}	
 	class ExportListener implements ActionListener{
 
 		@Override
@@ -98,23 +96,15 @@ public class UserController {
 		public void mouseClicked(MouseEvent e) {
 			DashboardView dv = new DashboardView();	
 			dv.setVisible(true);
-			
-			UserView uv = new UserView();
-	    	UserModel um = new UserModel();
-	    	UserController uc = new UserController(uv, um);
-	    	uv.setVisible(false);
-			
+			theView.dispose();		
 		}
 		@Override
-		public void mousePressed(MouseEvent e) {
-					
+		public void mousePressed(MouseEvent e) {			
 		}
-
 		@Override
 		public void mouseReleased(MouseEvent e) {
 					
 		}
-
 		@Override
 		public void mouseEntered(MouseEvent e) {
 			theView.btnback.setForeground(Color.RED);
@@ -199,8 +189,7 @@ public class UserController {
 			theView.role.setText("");
 			theView.user.setText("");
 			theView.password.setText("");
-			theView.phone.setText("");
-			
+			theView.phone.setText("");		
 		}
 		
 	}
@@ -217,31 +206,22 @@ public class UserController {
 			theView.phone.setText(theView.model.getValueAt(i, 0).toString());
 			
 		}
-
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+	
 		}
-
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
 			
 		}
-
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+		
 		}
-
 		@Override
 		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
 		
+		}	
 	}
 
 	public void setVisible(boolean b) {

@@ -110,7 +110,8 @@ public class CategoryController extends CategoryView{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				DashboardView dv = new DashboardView();	
-				dv.setVisible(true);		
+				dv.setVisible(true);
+				cv.dispose();
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {	
