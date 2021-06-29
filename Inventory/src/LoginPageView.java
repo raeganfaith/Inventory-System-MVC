@@ -35,7 +35,12 @@ public class LoginPageView extends JFrame {
 	public JPanel panelAdmin = new JPanel();
 	public JPanel prodpanel = new JPanel();
 	public JLabel CloseButton = new JLabel("CLOSE");
-
+	
+	public static void main(String[] args) {	
+	        LoginPageView lv = new LoginPageView();    
+	    	lv.setVisible(true);
+		}
+	
 	LoginPageView(){
 		setUndecorated(true); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

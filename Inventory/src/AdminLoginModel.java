@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 public class AdminLoginModel extends JFrame {
-	File f = new File("C:\\Users\\mynam\\Desktop\\ADMIN");
+	File f = new File("C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM");
     int ln;
     String Username, Password;
 	public String getUsername() {
@@ -38,12 +38,12 @@ public class AdminLoginModel extends JFrame {
 
 	void readFile(){
         try {
-            FileReader fr = new FileReader(f+ "\\info.txt");
+            FileReader fr = new FileReader(f+ "\\ADMIN.txt");
             System.out.println("file exists!");
         }
         catch (FileNotFoundException ex) {
         	try {
-                FileWriter fw = new FileWriter(f+ "\\info.txt");
+                FileWriter fw = new FileWriter(f+ "\\ADMIN.txt");
                 System.out.println("File created");
             } 
         	catch (IOException e) {
@@ -54,7 +54,7 @@ public class AdminLoginModel extends JFrame {
 
     void addData(String user,String password){
         try {
-            RandomAccessFile raf = new RandomAccessFile(f+ "\\info.txt", "rw");
+            RandomAccessFile raf = new RandomAccessFile(f+ "\\ADMIN.txt", "rw");
             for(int i = 0; i < ln; i++) {
                 raf.readLine();
             }
@@ -74,7 +74,7 @@ public class AdminLoginModel extends JFrame {
     }
     void logic(String user, String password){
         try {
-            RandomAccessFile raf = new RandomAccessFile(f+ "\\info.txt", "rw");
+            RandomAccessFile raf = new RandomAccessFile(f+ "\\ADMIN.txt", "rw");
             for(int i = 0; i < ln; i+=3) {
             	System.out.println("count " + i);
             
@@ -88,7 +88,7 @@ public class AdminLoginModel extends JFrame {
                     AdminLoginView av = new AdminLoginView();
                     AdminLoginModel am = new AdminLoginModel();
                     AdminLoginController ac = new AdminLoginController(av , am);
-                    av.hide();
+                    av.setVisible(false);
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");
@@ -109,7 +109,7 @@ public class AdminLoginModel extends JFrame {
     void countLines(){
         try {
             ln = 0;
-            RandomAccessFile raf = new RandomAccessFile(f+ "\\info.txt", "rw");
+            RandomAccessFile raf = new RandomAccessFile(f+ "\\ADMIN.txt", "rw");
             for(int i = 0; raf.readLine()!= null; i++){
                 ln++;
             }

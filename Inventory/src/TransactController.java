@@ -47,13 +47,13 @@ public class TransactController extends JFrame {
 		}
 		
 		}
+	
 	class SaveListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			tv.displaysuccesmessage("Successfully Saved!");
 			
-			String filePath = "C:\\\\Users\\\\mynam\\\\Desktop\\\\PRODUCT\\\\TRANSACTHISTORY.txt";
+			String filePath = "C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM\\TRANSACTHISTORY.txt";
 			File file = new File(filePath);
 			try {
 				FileWriter fw = new FileWriter(file);
