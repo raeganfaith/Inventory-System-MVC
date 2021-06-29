@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,10 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class CashierLoginModel extends JFrame {
-	
 	File f = new File("C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM");
     int ln;
     String Username, Password;
+    CashierLoginView cv;
 	public String getUsername() {
 		return Username;
 	}
@@ -67,8 +66,7 @@ public class CashierLoginModel extends JFrame {
         catch (IOException e) {
             Logger.getLogger(CashierLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
-    }
-    
+    }  
     void checkData(String user, String password){
         try {
             RandomAccessFile raf = new RandomAccessFile(f+ "\\CASHIER.txt", "rw");
@@ -96,23 +94,18 @@ public class CashierLoginModel extends JFrame {
         try {
             RandomAccessFile raf = new RandomAccessFile(f+ "\\CASHIER.txt", "rw");
             for(int i = 0; i < ln; i+=3) {
-            	System.out.println("count " + i);
-            
+            	System.out.println("count " + i);     
                 String forUser = raf.readLine().substring(10);
-                String forPass = raf.readLine().substring(10);
-                
+                String forPass = raf.readLine().substring(10);              
                 if(user.equals(forUser) & password.equals(forPass)) {
                     JOptionPane.showMessageDialog(null, "Login Successfully!");
                     DashboardView2 dv = new DashboardView2();	
-                    dv.setVisible(true);
-                    
-                    CashierLoginView clv = new CashierLoginView();
-            		CashierLoginModel clm = new CashierLoginModel();
-            		CashierLoginController clc = new CashierLoginController(clv, clm);                
-                    clv.setVisible(false);                
+                    dv.setVisible(true);                
+                    cv.setVisible(false);
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");
+                    cv.show();
                     break;
                 }
                 for(int k = 1; k < 2; k++){

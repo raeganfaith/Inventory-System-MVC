@@ -69,8 +69,7 @@ public class CategoryController extends CategoryView{
 				public void actionPerformed(ActionEvent e) {
 						int c = cv.table.getSelectedRow();
 						cv.model.removeRow(c);	
-				}
-		
+				}	
 		}
 		class ClearListener implements ActionListener{
 

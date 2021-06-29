@@ -52,13 +52,11 @@ import javax.swing.JOptionPane;
 			public void mouseExited(MouseEvent e) {
 				clv.CloseButton.setForeground(Color.BLACK);
 				
-			}
-			
-		}
-		
+			}		
+		}	
    class LoginListener implements ActionListener{
 		@Override
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e) {	
 			clm.createFolder();
 			clm.readFile();
 			clm.countLines();

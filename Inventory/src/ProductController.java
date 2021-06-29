@@ -47,8 +47,7 @@ public class ProductController {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-	}
-	
+	} 	
 	class AddListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -58,7 +57,7 @@ public class ProductController {
 			theView.row[3] = theView.quantity.getText();
 			theView.row[4] = theView.price.getText();
 			theView.model.addRow(theView.row);
-
+			
 			theView.ID.setText("");
 			theView.name.setText("");
 			theView.comboBox.setSelectedItem("");
@@ -86,8 +85,7 @@ public class ProductController {
 
 		@Override
 		public void mouseExited(MouseEvent e) {
-			theView.btnback.setForeground(Color.BLACK);
-			
+			theView.btnback.setForeground(Color.BLACK);	
 		}	
 	}	
 	class ClearListener implements ActionListener{
@@ -107,25 +105,15 @@ public class ProductController {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			int response = theView.Validation("Are you sure you want to exit?", "Confirmation");
-			if (response==JOptionPane.YES_OPTION ) {
-				ProductView theView = new ProductView();
-				ProductModel theModel = new ProductModel();
-		        ProductController pc = new ProductController(theView, theModel);    
+			if (response==JOptionPane.YES_OPTION ) {    
 				theView.dispose();
 			}
 			else if (response==JOptionPane.NO_OPTION) {
-				ProductView theView = new ProductView();
-				ProductModel theModel = new ProductModel();
-		        ProductController pc = new ProductController(theView, theModel);    
 		    	theView.setVisible(true);
 			}
-			else if (response==JOptionPane.CLOSED_OPTION) {
-				ProductView theView = new ProductView();
-				ProductModel theModel = new ProductModel();
-		        ProductController pc = new ProductController(theView, theModel);    
+			else if (response==JOptionPane.CLOSED_OPTION) {  
 		    	theView.setVisible(true);
 			}
-			
 		}
 
 		@Override
@@ -136,16 +124,13 @@ public class ProductController {
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+	
 		}
-
 		@Override
 		public void mouseEntered(MouseEvent e) {
 			theView.CloseButton.setForeground(Color.RED);
 			
 		}
-
 		@Override
 		public void mouseExited(MouseEvent e) {
 			theView.CloseButton.setForeground(Color.BLACK);			
@@ -161,13 +146,10 @@ public class ProductController {
 			theView.model.setValueAt(theView.comboBox.getSelectedItem(), i, 2);
 			theView.model.setValueAt(theView.quantity.getText(), i, 3);
 			theView.model.setValueAt(theView.price.getText(), i, 4);
-			
-		}
-		
+		}		
 	}
 	
 	class SaveListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			theView.theMessage("Successfuly saved!");
@@ -181,8 +163,7 @@ public class ProductController {
 						bw.write(theView.model.getValueAt(i, j).toString()+" "); //column
 					}
 					bw.newLine();
-				}
-				
+				} 			
 				bw.close();
 				fw.close();
 			} catch (IOException e1) {
@@ -194,14 +175,12 @@ public class ProductController {
 	}
 	
 	class DeleteListener implements ActionListener{
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			int i = theView.table.getSelectedRow();
 			theView.model.removeRow(i);
 		}
 		
-			
 	}
 	
 	class SwitchListener implements ActionListener{
@@ -228,8 +207,7 @@ public class ProductController {
 				row[2] = model1.getValueAt(index[i], 2);
 				row[3] = model1.getValueAt(index[i], 3);
 				row[4] = model1.getValueAt(index[i], 4);
-				
-				
+	
 				model2.addRow(row);
 			}
 			tv.setVisible(true);

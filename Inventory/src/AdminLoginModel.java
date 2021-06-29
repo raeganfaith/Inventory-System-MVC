@@ -18,6 +18,7 @@ public class AdminLoginModel extends JFrame {
 	File f = new File("C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM");
     int ln;
     String Username, Password;
+    
 	public String getUsername() {
 		return Username;
 	}
@@ -75,21 +76,22 @@ public class AdminLoginModel extends JFrame {
             RandomAccessFile raf = new RandomAccessFile(f+ "\\ADMIN.txt", "rw");
             for(int i = 0; i < ln; i+=3) {
             	System.out.println("count " + i);
-            
+         
                 String forUser = raf.readLine().substring(10);
                 String forPass = raf.readLine().substring(10);
                 
                 if(user.equals(forUser) & password.equals(forPass)) {
                     JOptionPane.showMessageDialog(null, "Login Successfull!");
                     DashboardView dv = new DashboardView();	
-                    dv.setVisible(true);                
+                    dv.setVisible(true);
                     AdminLoginView av = new AdminLoginView();
-                    AdminLoginModel am = new AdminLoginModel();
-                    AdminLoginController ac = new AdminLoginController(av , am);
-                    av.setVisible(false);
+                    av.setVisible(false);       
+
                     break;
                 }else if(i == (ln-2)){
                     JOptionPane.showMessageDialog(null, "Incorrect username/password");
+                    AdminLoginView av = new AdminLoginView();
+                    av.setVisible(false);
                     break;
                 }
                 for(int k = 1; k < 2; k++){
