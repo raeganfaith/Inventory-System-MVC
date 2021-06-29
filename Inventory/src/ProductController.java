@@ -57,7 +57,6 @@ public class ProductController {
 			theView.row[2] = theView.comboBox.getSelectedItem();
 			theView.row[3] = theView.quantity.getText();
 			theView.row[4] = theView.price.getText();
-			theView.row[5] = theView.description.getText();
 			theView.model.addRow(theView.row);
 
 			theView.ID.setText("");
@@ -65,36 +64,27 @@ public class ProductController {
 			theView.comboBox.setSelectedItem("");
 			theView.quantity.setText("");
 			theView.price.setText("");
-			theView.description.setText("");
-			
 		}
-		
-	}
-	
+	}	
 	class BackListener implements MouseListener{
-
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+			ProductView theView = new ProductView();
+			ProductModel theModel = new ProductModel();
+	        ProductController pc = new ProductController(theView, theModel);    
+	    	theView.setVisible(true);
+			DashboardView dv = new DashboardView();	
+			dv.setVisible(true);				
 		}
-
 		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+		public void mousePressed(MouseEvent e) {			
 		}
-
 		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+		public void mouseReleased(MouseEvent e) {			
 		}
-
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			theView.btnback.setForeground(Color.RED);
-			
+			theView.btnback.setForeground(Color.RED);		
 		}
 
 		@Override
@@ -111,8 +101,7 @@ public class ProductController {
 			theView.name.setText("");
 			theView.comboBox.setSelectedItem("");
 			theView.quantity.setText("");
-			theView.price.setText("");
-			theView.description.setText("");		
+			theView.price.setText("");		
 		}
 		
 	}
@@ -175,7 +164,6 @@ public class ProductController {
 			theView.model.setValueAt(theView.comboBox.getSelectedItem(), i, 2);
 			theView.model.setValueAt(theView.quantity.getText(), i, 3);
 			theView.model.setValueAt(theView.price.getText(), i, 4);
-			theView.model.setValueAt(theView.description.getText(), i, 5);
 			
 		}
 		
@@ -243,7 +231,6 @@ public class ProductController {
 				row[2] = model1.getValueAt(index[i], 2);
 				row[3] = model1.getValueAt(index[i], 3);
 				row[4] = model1.getValueAt(index[i], 4);
-				row[5] = model1.getValueAt(index[i], 5);
 				
 				
 				model2.addRow(row);

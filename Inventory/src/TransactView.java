@@ -43,7 +43,7 @@ import javax.swing.table.DefaultTableModel;
 		public JLabel btnback = new JLabel("  BACK");
 		private JButton btnSave = new JButton("SAVE");
 		public JTable table = new JTable();
-		final Object[] row = new Object[6];
+		final Object[] row = new Object[5];
 		
 		DefaultTableModel model;
 		
@@ -68,7 +68,7 @@ import javax.swing.table.DefaultTableModel;
 			
 			table = new JTable();
 			model = new DefaultTableModel();
-			Object[] column = {"Product ID","Name","Category","Stock","Price","Description"};//add date
+			Object[] column = {"Product ID","Name","Category","Stock","Price"};//add date
 			model.setColumnIdentifiers(column);
 			table.setModel(model);
 			scrollPane.setViewportView(table);

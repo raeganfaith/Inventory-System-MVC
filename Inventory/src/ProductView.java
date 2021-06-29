@@ -39,7 +39,6 @@ public class ProductView extends JFrame {
 	private JLabel lblProdID = new JLabel("Product ID:");
 	private JLabel lblname = new JLabel("Name:");
 	private JLabel lblcat = new JLabel("Category:");
-	private JLabel lblstock = new JLabel("Stock:");
 	private JLabel lblprice = new JLabel("Price:");
 	private JLabel lbldesc = new JLabel("Description:");
 	public JLabel CloseButton = new JLabel("CLOSE");
@@ -101,57 +100,44 @@ public class ProductView extends JFrame {
 		lblTitle.setFont(new Font("Big John", Font.PLAIN, 20));
 		contentPane.add(lblTitle);
 		
-		lblProdID.setBounds(31, 186, 87, 24);
-		lblProdID.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblProdID.setBounds(31, 186, 100, 24);
+		lblProdID.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblProdID);
 		
-		lblname.setBounds(31, 220, 100, 24);
-		lblname.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblname.setBounds(31, 226, 100, 24);
+		lblname.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblname);
 		
-		ID.setBounds(123, 191, 139, 19);
+		ID.setBounds(123, 186, 139, 30);
 		contentPane.add(ID);
 		ID.setColumns(10);
 		
-		lblcat.setBounds(31, 253, 87, 24);
-		lblcat.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblcat.setBounds(31, 271, 87, 24);
+		lblcat.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblcat);
 		
-		lblstock.setBounds(31, 287, 87, 24);
-		lblstock.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblstock);
-		
-		lblstock.setBounds(31, 321, 87, 24);
-		lblstock.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblstock);
-		
-		lblprice.setBounds(31, 355, 87, 24);
-		lblprice.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblprice.setBounds(31, 366, 87, 24);
+		lblprice.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(lblprice);
 		
 		name = new JTextField();
-		name.setBounds(123, 225, 138, 24);
+		name.setBounds(123, 229, 138, 30);
 		name.setColumns(10);
 		contentPane.add(name);
 		
 		quantity = new JTextField();
-		quantity.setBounds(123, 292, 139, 19);
+		quantity.setBounds(123, 321, 139, 30);
 		quantity.setColumns(10);
 		contentPane.add(quantity);
 		
 		price = new JTextField();
-		price.setBounds(123, 326, 139, 19);
+		price.setBounds(123, 366, 139, 30);
 		price.setColumns(10);
 		contentPane.add(price);
 		
-		description = new JTextField();
-		description.setBounds(123, 360, 139, 38);
-		description.setColumns(10);
-		contentPane.add(description);
-		
 		comboBox = new JComboBox();
 		combo = new DefaultComboBoxModel();
-		comboBox.setBounds(123, 257, 138, 21);
+		comboBox.setBounds(123, 275, 138, 30);
 		contentPane.add(comboBox);
 		fill();
 		fillComboFromTxtFile();
@@ -161,7 +147,7 @@ public class ProductView extends JFrame {
 		
 		table = new JTable();
 		model = new DefaultTableModel();
-		Object[] column = {"Product ID","Name","Category","Quantity","Price","Description"};
+		Object[] column = {"Product ID","Name","Category","Quantity","Price"};
 		model.setColumnIdentifiers(column);
 		table.setModel(model);
 		scrollPane.setViewportView(table);
@@ -201,7 +187,12 @@ public class ProductView extends JFrame {
 		btnSwitch.setFont(new Font("Tahoma", Font.BOLD, 12));
 		contentPane.add(btnSwitch);
 		
-		this.add(prodpanel);
+		getContentPane().add(prodpanel);
+		
+		JLabel lblStock = new JLabel("Stock:");
+		lblStock.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblStock.setBounds(31, 320, 87, 24);
+		contentPane.add(lblStock);
 		
 	}
 	
@@ -277,7 +268,5 @@ public class ProductView extends JFrame {
 	void theMessage(String Message) {
 		JOptionPane.showMessageDialog(null, Message);
 	}
-	
-
 }
 

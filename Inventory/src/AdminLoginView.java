@@ -70,15 +70,7 @@ import javax.swing.border.EmptyBorder;
 		setContentPane(prodpanel);
 		setLocationRelativeTo(null);
 		prodpanel.setLayout(null);
-		
-//		prodpanel.add(lblIconLogo,lblStore);
-//		prodpanel.add(panelMain,lbladmn);
-//		prodpanel.add(lbladmin,panel);
-//		prodpanel.add(panel_2,userField);
-//		prodpanel.add(panel_2,userField);
-//		prodpanel.add(panel_2,userField);
-//		
-		
+	
 		lblIconLogo.setBounds(124, 2, 148, 186);
 		prodpanel.add(lblIconLogo);
 		lblIconLogo.setIcon(new ImageIcon(img_logo));

@@ -27,7 +27,6 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 	public class CashierLoginView extends JFrame {
-		
 		private Image img_logo = new ImageIcon(CashierLoginView.class.getResource("ress/logoh.png")).getImage().getScaledInstance(140, 170, Image.SCALE_SMOOTH);
 		private Image img_cashier = new ImageIcon(CashierLoginView.class.getResource("ress/admin.png")).getImage().getScaledInstance(135, 160, Image.SCALE_SMOOTH);
 		

@@ -98,15 +98,21 @@ public class UserController {
 		public void mouseClicked(MouseEvent e) {
 			DashboardView dv = new DashboardView();	
 			dv.setVisible(true);
+			
+			UserView uv = new UserView();
+	    	UserModel um = new UserModel();
+	    	UserController uc = new UserController(uv, um);
+	    	uv.setVisible(false);
+			
 		}
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub			
+					
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub			
+					
 		}
 
 		@Override

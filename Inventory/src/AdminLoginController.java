@@ -52,7 +52,8 @@ import javax.swing.JOptionPane;
 			am.createFolder();
 			am.readFile();
 			am.countLines();
-			am.logic(av.getUserName(), av.getUserPass());		
+			am.logic(av.getUserName(), av.getUserPass());
+			av.dispose();
 		}
 	}  
 	class CancelListener implements ActionListener{
