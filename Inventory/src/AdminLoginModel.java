@@ -10,12 +10,13 @@ import java.util.logging.Logger;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-public class AdminLoginModel extends JFrame {
+public class AdminLoginModel extends AdminLoginView {
 	
 	File f = new File("C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM");
     int ln;
-    String Username, Password;
     
+    public String Username, Password;
+ 
 	public String getUsername() {
 		return Username;
 	}
@@ -122,8 +123,8 @@ public class AdminLoginModel extends JFrame {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-//----------------Interface---------------  
-	interface ReadWriteSources{
+ 
+	public interface ReadWriteSources{
 	  void readfile();
 	  void addData();
 	  void logic();
@@ -142,7 +143,5 @@ public class AdminLoginModel extends JFrame {
 			System.out.println("Successfully passed the logic!");
 		}		
 	}
-	
- //-----------------------------------------------  
-
+ 
 }

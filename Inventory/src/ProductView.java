@@ -101,7 +101,7 @@ public class ProductView extends JFrame {
 		contentPane.add(lblTitle);
 		
 		lblProdID.setBounds(31, 186, 100, 30);
-		lblProdID.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblProdID.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		contentPane.add(lblProdID);
 		
 		lblname.setBounds(31, 226, 100, 35);

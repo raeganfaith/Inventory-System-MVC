@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-public class ProductController {
+public class ProductController{
 	
 	private ProductView theView;
 	private ProductModel theModel;	

@@ -265,6 +265,7 @@ import javax.swing.border.EmptyBorder;
 	void displayMessage(String Message) {
 		JOptionPane.showMessageDialog(null, Message);
 	}
+
 }
 	
 

@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 		AdminLoginView av;
 		AdminLoginModel am;
 		String Username, Password;
+		
 		public AdminLoginController(AdminLoginView av, AdminLoginModel am) {
 			this.av = av;
 			this.am = am;	
