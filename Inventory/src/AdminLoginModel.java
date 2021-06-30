@@ -123,25 +123,33 @@ public class AdminLoginModel extends AdminLoginView {
             Logger.getLogger(AdminLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
     }
- 
-	public interface ReadWriteSources{
-	  void readfile();
-	  void addData();
-	  void logic();
-	 }
-	public class InterfaceExample implements ReadWriteSources {
-		@Override
-		public void readfile() {
-			System.out.println("Successfully read the file!");
-		}
-		@Override
-		public void addData() {
-			System.out.println("Successfully added data!");		
-		}
-		@Override
-		public void logic() {
-			System.out.println("Successfully passed the logic!");
-		}		
+
+	public interface ReadSources{
+		void Read();
 	}
- 
+	public interface WriteSources {
+	    void Write();
+	}
+
+	public interface CheckData {
+	    void  Check();
+	}
+	public class Checking implements ReadSources, WriteSources, CheckData {
+
+		@Override
+		public void Check() {
+			System.out.println("Successfully checked data!");
+		}
+
+		@Override
+		public void Write() {
+			System.out.println("Successfully Written the data!");		
+		}
+		@Override
+		public void Read() {
+			System.out.println("Successfully read data!");
+			
+		}
+	}
+
 }

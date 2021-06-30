@@ -47,7 +47,8 @@ public class ProductController{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-	} 	
+	} 
+	//liskov distribution
 	class AddListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {

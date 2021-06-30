@@ -9,11 +9,14 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class CashierLoginModel extends JFrame {
+public class CashierLoginModel{
 	File f = new File("C:\\Users\\mynam\\Desktop\\INVENTORY SYSTEM");
-    int ln;
-    String Username, Password;
     CashierLoginView cv;
+    
+    public int ln;
+    public String Username;
+    public String Password;
+    
 	public String getUsername() {
 		return Username;
 	}
@@ -26,6 +29,7 @@ public class CashierLoginModel extends JFrame {
 	public void setPassword(String password) {
 		Password = password;
 	}
+
 	void createFolder(){
         if(!f.exists()){
             f.mkdirs();
@@ -140,5 +144,41 @@ public class CashierLoginModel extends JFrame {
             Logger.getLogger(CashierLoginView.class.getName()).log(Level.SEVERE, null, e);
         }
     }
+    //--------------------------
+    public interface Cashier {
+    	public void readfiles();
+    }
+    class user implements Cashier{
+    	@Override
+    	public void readfiles() {
+    		
+    	}
+    }
+    class pass implements Cashier{
+    	@Override
+    	public void readfiles() {
+    		
+    	}
+    //-----------LSP-----------------
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	
 }

@@ -12,10 +12,11 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+//dependency inversion
 public class UserController {	
 	UserView theView;
 	UserModel theModel;	
+	
 	public UserController(UserView theView, UserModel theModel) {
 		
 		this.theView = theView;
