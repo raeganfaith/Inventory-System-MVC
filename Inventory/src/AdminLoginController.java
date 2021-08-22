@@ -46,8 +46,7 @@ import javax.swing.JOptionPane;
 			@Override
 			public void mouseExited(MouseEvent e) {
 			}		
-		}
-		
+		}		
    class LoginListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {

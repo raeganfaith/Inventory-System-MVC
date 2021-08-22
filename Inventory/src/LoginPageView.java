@@ -227,6 +227,30 @@ public class LoginPageView extends JFrame {
 		prodpanel.add(CloseButton);
 		setLocationRelativeTo(null);
 	}
+	public interface ReadSources{
+		void Read();
+	}
+	public interface WriteSources{
+	    void Write();
+	}
+	public interface CheckData{
+	    void  Check();
+	}
+	public class Checking implements ReadSources, WriteSources, CheckData {
+		@Override
+		public void Check() {
+			System.out.println("Successfully checked data!");
+		}
+
+		@Override
+		public void Write() {
+			System.out.println("Successfully Written the data!");		
+		}
+		@Override
+		public void Read() {
+			System.out.println("Successfully read data!");	
+		}
+	}
 	void addCashierListener(MouseListener listenForCashier) {
 		panelCashier.addMouseListener(listenForCashier);
 	}
