@@ -1,4 +1,4 @@
-//ADMIN LOG CONTROLLER
+//ADMIN LOG CONTROLLER:
 import java.awt.Color;
 
 import java.awt.event.ActionEvent;
