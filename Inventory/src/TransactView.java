@@ -47,10 +47,10 @@ import javax.swing.table.DefaultTableModel;
 			setLocationRelativeTo(null);
 			prodpanel.setLayout(null);
 			
-			prodpanel.add(lblUni,lblStore);
-			prodpanel.add(title,logo);
-			prodpanel.add(lbltitle,CloseButton);
-			prodpanel.add(btnback,btnSave);
+			prodpanel.add(lblUni);
+			prodpanel.add(title);
+			prodpanel.add(lbltitle);
+			prodpanel.add(btnback);
 			
 			scrollPane.setBounds(10, 186, 680, 295);
 			prodpanel.add(scrollPane);

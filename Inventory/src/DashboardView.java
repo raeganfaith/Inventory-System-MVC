@@ -77,7 +77,6 @@ public class DashboardView extends JFrame {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				CloseButton.setForeground(Color.BLACK);
-			
 			}
 		});
 		CloseButton.setHorizontalAlignment(SwingConstants.CENTER);

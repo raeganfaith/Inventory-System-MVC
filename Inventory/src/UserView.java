@@ -67,18 +67,18 @@ public class UserView extends JFrame{
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
-		userpanel.add(userid, role);
-		userpanel.add(user, password);
-		userpanel.add(phone, lblUni);
-		userpanel.add(lblStore, lblNewLabel_1);
-		userpanel.add(lblNewLabel, panel);
-		userpanel.add(lblNewLabel_2, lblNewLabel_3);
-		userpanel.add(lblNewLabel_3_1, lblNewLabel_3_1_1);
-		userpanel.add(lblNewLabel_3_1_2, btnEdit);
-		userpanel.add(btnDelete, scrollPane);
-		userpanel.add(btnAdd, btnback);
-		userpanel.add(phonenum, CloseButton);
-		userpanel.add(btnsClear, btnExport);
+		//userpanel.add(role);
+		//userpanel.add(user, password);
+		//userpanel.add(phone);
+		//userpanel.add(lblNewLabel_1);
+		//userpanel.add(panel);
+		//userpanel.add(lblNewLabel_3);
+		//userpanel.add(lblNewLabel_3_1_1);
+		//userpanel.add(btnEdit);
+		//userpanel.add(btnDelete, scrollPane);
+		//userpanel.add(btnAdd, btnback);
+		//userpanel.add(phonenum, CloseButton);
+		//userpanel.add(btnsClear, btnExport);
 
 		lblUni.setForeground(new Color(245, 245, 245));
 		lblUni.setFont(new Font("Big John", Font.PLAIN, 50));
